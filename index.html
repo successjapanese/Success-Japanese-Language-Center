@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUCCESS JAPANESE LANGUAGE CENTER</title>
+    <title>সাকুরা জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</title>
     <!-- Tailwind CSS for modern and responsive styling -->
     <script src="https://jsdelivr.net"></script>
     <!-- FontAwesome for Icons -->
@@ -19,11 +19,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-3">
-                    <!-- লোগো ইমেজ: এখানে আপনার লোগোর সঠিক নাম বা অনলাইন লিংক বসাবেন -->
-                    <img id="nav-logo" src="logo.png" alt="Logo" class="h-14 w-14 object-contain rounded-full border border-red-500 onerror="this.src='https://placehold.co'">
+                    <img id="nav-logo" src="logo.png" alt="Logo" class="h-14 w-14 object-contain rounded-full border border-red-500" onerror="this.src='https://placehold.co'">
                     <div>
-                        <span class="text-xl font-bold text-red-600 block">SUCCESS JAPANESE</span>
-                        <span class="text-xs text-gray-500 tracking-wider">LANGUAGE CENTER</span>
+                        <span class="text-xl font-bold text-red-600 block">সাকুরা জাপানিজ</span>
+                        <span class="text-xs text-gray-500 tracking-wider">ল্যাঙ্গুয়েজ সেন্টার</span>
                     </div>
                 </div>
                 <div class="hidden md:flex space-x-6 font-medium">
@@ -34,12 +33,20 @@
                     <a href="#blog" class="hover:text-red-600 transition">ব্লগ</a>
                     <a href="#contact" class="hover:text-red-600 transition">যোগাযোগ</a>
                 </div>
-                <button onclick="toggleAdminModal()" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition flex items-center gap-2 text-sm">
+                <!-- মেনুবারের বাটনটি লাল এবং স্পষ্ট করা হয়েছে -->
+                <button onclick="toggleAdminModal()" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition flex items-center gap-2 text-sm font-bold shadow-md">
                     <i class="fa-solid fa-lock"></i> অ্যাডমিন প্যানেল
                 </button>
             </div>
         </div>
     </nav>
+
+    <!-- MOBILE FLOATING ADMIN BUTTON (মোবাইলে সহজে খুঁজে পাওয়ার জন্য স্ক্রিনের নিচে থাকবে) -->
+    <div class="fixed bottom-6 right-6 z-50 md:hidden">
+        <button onclick="toggleAdminModal()" class="bg-red-600 text-white p-4 rounded-full shadow-2xl hover:bg-red-700 transition flex items-center justify-center border-2 border-white">
+            <i class="fa-solid fa-lock text-xl"></i>
+        </button>
+    </div>
 
     <!-- HERO SECTION -->
     <section id="home" class="relative bg-red-50 py-20 px-4 overflow-hidden text-center md:text-left">
@@ -54,7 +61,7 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <img src="https://unsplash.com" alt="Japan Mt Fuji" class="rounded-2xl shadow-2xl border-4 border-white max-w-full h-auto">
+                <img src="https://unsplash.com" alt="Japan" class="rounded-2xl shadow-2xl border-4 border-white max-w-full h-auto">
             </div>
         </div>
     </section>
@@ -66,31 +73,28 @@
             <p class="text-gray-500 mt-2">আপনার প্রয়োজন অনুযায়ী সঠিক লেভেলটি বেছে নিন।</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- N5 Course -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
                 <div class="p-6">
                     <span class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded">Beginner</span>
                     <h3 class="text-xl font-bold mt-3 text-gray-900">JLPT/NAT N5 Course</h3>
                     <p class="text-gray-600 mt-2 text-sm">হিরাগানা, কাতাকানা, মৌলিক কাঞ্জি এবং দৈনন্দিন কথোপকথনের প্রাথমিক ধারণা।</p>
                     <div class="mt-6 flex justify-between items-center border-t pt-4">
-                        <span class="text-lg font-extrabold text-red-600">৳ ২০,০০০</span>
+                        <span class="text-lg font-extrabold text-red-600">৳ ৫,৫০০</span>
                         <a href="#admission" class="text-sm font-bold text-gray-800 hover:text-red-600 flex items-center gap-1">ভর্তি ফরম <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
             </div>
-            <!-- N4 Course -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
                 <div class="p-6">
                     <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded">Intermediate</span>
                     <h3 class="text-xl font-bold mt-3 text-gray-900">JLPT/NAT N4 Course</h3>
-                    <p class="text-gray-600 mt-2 text-sm">উন্নত ব্যাকরণ, ৩০০+ কাঞ্জি এবং জাপানিজ কাজের ক্ষেত্রে প্রয়োজনীয় কথাবলার দক্ষতা।</p>
+                    <p class="text-gray-600 mt-2 text-sm">উнят ব্যাকরণ, ৩০০+ কাঞ্জি এবং জাপানিজ কাজের ক্ষেত্রে প্রয়োজনীয় কথাবলার দক্ষতা।</p>
                     <div class="mt-6 flex justify-between items-center border-t pt-4">
-                        <span class="text-lg font-extrabold text-red-600">৳ ৩০,০০০</span>
+                        <span class="text-lg font-extrabold text-red-600">৳ ৬,৫০০</span>
                         <a href="#admission" class="text-sm font-bold text-gray-800 hover:text-red-600 flex items-center gap-1">ভর্তি ফরম <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
             </div>
-            <!-- SSW Course -->
             <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
                 <div class="p-6">
                     <span class="text-xs font-bold bg-purple-100 text-purple-700 px-2 py-1 rounded">Job Focused</span>
@@ -111,30 +115,31 @@
             <div>
                 <h2 class="text-3xl md:text-4xl font-bold text-red-500">জাপান স্টুডেন্ট ভিসা ও কনসালটেন্সি</h2>
                 <p class="text-gray-300 mt-4 leading-relaxed">আমরা শিক্ষার্থীদের জাপানের সেরা ল্যাঙ্গুয়েজ স্কুল এবং ইউনিভার্সিটিগুলোতে শতভাগ সফলতার সাথে অ্যাডমিশন ও ভিসা প্রসেসিং সেবা দিয়ে আসছি।</p>
-                
-                <div class="mt-8 space-y-4">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-red-600 p-2 rounded-lg mt-1"><i class="fa-solid fa-file-invoice text-sm"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">ডকুমেন্টেশন সাপোর্ট</h4>
-                            <p class="text-gray-400 text-sm">COE (Certificate of Eligibility) আবেদনের জন্য নিখুঁত ফাইল প্রস্তুতকরণ।</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="bg-red-600 p-2 rounded-lg mt-1"><i class="fa-solid fa-hotel text-sm"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">থাকা ও পার্ট-টাইম জব গাইড</h4>
-                            <p class="text-gray-400 text-sm">জাপানে পৌঁছানোর পর থাকার জায়গা খোঁজা এবং লিগ্যাল পার্ট-টাইম জবের সন্ধান দেওয়া।</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
                 <h3 class="text-xl font-bold text-white mb-4">ফ্রি কনসালটেন্সি বুক করুন</h3>
-                <form onsubmit="alert('আপনার রিকোয়েস্ট সফলভাবে জমা হয়েছে! আমাদের টিম শীঘ্রই যোগাযোগ করবে।'); this.reset(); return false;" class="space-y-4 text-gray-900">
-                    <input type="text" placeholder="SUCCESS JAPANESE LANGUAGE CENTER" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border focus:outline-none focus:ring-2 focus:ring-red-500">
-                    <input type="tel" placeholder="01796663354" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border focus:outline-none focus:ring-2 focus:ring-red-500">
-                    <select class="w-full px-4 py-3 rounded-lg bg-gray-50 border focus:outline-none focus:ring-2 focus:ring-red-500">
-                        <option>আপনার বর্তমান জাপানিজ লেভেল নির্বাচন করুন</option>
-                        <option>একদম নতুন (Beginner)</option>
-                        <option>N5 কমপ্লিট</option>
+                <form onsubmit="alert('আপনার রিকোয়েস্ট সফলভাবে জমা হয়েছে!'); this.reset(); return false;" class="space-y-4 text-gray-900">
+                    <input type="text" placeholder="আপনার নাম" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border outline-none">
+                    <input type="tel" placeholder="মোবাইল নম্বর" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border outline-none">
+                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition shadow-md">সাবমিট করুন</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION FORM -->
+    <section id="admission" class="py-20 max-w-3xl mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-8">
+                <i class="fa-solid fa-user-graduate text-4xl text-red-600 mb-2"></i>
+                <h2 class="text-3xl font-bold text-gray-900">অনলাইন ভর্তি ফরম</h2>
+                <p class="text-gray-500 text-sm mt-1">সঠিক তথ্য দিয়ে নিচের ফরমটি পূরণ করুন।</p>
+            </div>
+            
+            <form id="admissionForm" onsubmit="handleAdmissionSubmit(event)" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">শিক্ষার্থীর নাম *</label>
+                        <input type="text" id="studentName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none text-sm">
+                    </div>
+                    <div>
