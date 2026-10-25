@@ -3,154 +3,956 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Japanese Language Center</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://tailwindcss.com"></script>
-    <link href="https://cloudflare.com" rel="stylesheet">
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+    <title>Success Japanese Language Center | সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #bc002d; /* Japanese Sun Crimson */
+            --primary-dark: #8b0021;
+            --secondary: #1e293b;
+            --accent: #ffb7c5; /* Sakura Pink */
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
 
-    <!-- Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-red-600">🇯🇵 Success</span>
-                    <span class="ml-2 text-lg font-semibold text-gray-700">Japanese Language Center</span>
-                </div>
-                <nav class="hidden md:flex space-x-8 font-medium">
-                    <a href="#home" class="hover:text-red-600 transition">হোম</a>
-                    <a href="#about" class="hover:text-red-600 transition">আমাদের সম্পর্কে</a>
-                    <a href="#courses" class="hover:text-red-600 transition">কোর্সসমূহ</a>
-                    <a href="#why-us" class="hover:text-red-600 transition">কেন আমরা</a>
-                    <a href="#contact" class="hover:text-red-600 transition">যোগাযোগ</a>
-                </nav>
-                <div>
-                    <a href="#contact" class="bg-red-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-red-700 transition">ভর্তি চলছে</a>
-                </div>
-            </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+
+        .top-social a {
+            color: var(--white);
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .top-social a:hover {
+            color: var(--accent);
+        }
+
+        /* Navigation Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-sun {
+            width: 42px;
+            height: 42px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 15px rgba(188, 0, 45, 0.4);
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-apply {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 9px 22px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(188, 0, 45, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-apply:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.92), rgba(139, 0, 33, 0.85)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 5% 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 6px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-lg {
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #d60033;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--secondary);
+        }
+
+        /* Stats Bar */
+        .stats-container {
+            max-width: 1100px;
+            margin: -50px auto 0;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .section-title div {
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Courses Section */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .course-header {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .course-header.n5 { background: linear-gradient(45deg, #1e293b, #334155); }
+        .course-header.n4 { background: linear-gradient(45deg, #8b0021, #bc002d); }
+        .course-header.ssw { background: linear-gradient(45deg, #0f766e, #0d9488); }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+
+        .course-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .course-features li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-features i {
+            color: #10b981;
+        }
+
+        .course-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Features/Why Us */
+        .features {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: 12px;
+            background: var(--light-bg);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            background: #fff0f3;
+        }
+
+        .feature-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        /* Quiz Tool */
+        .quiz-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quiz-option {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: #fff5f7;
+        }
+
+        .quiz-option input {
+            accent-color: var(--primary);
+        }
+
+        /* Application Form Section */
+        .apply-section {
+            background: linear-gradient(rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.95)), url('https://images.unsplash.com/photo-1528164344705-47542687990d?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            color: var(--white);
+            border-radius: 20px;
+            padding: 50px 5%;
+        }
+
+        .apply-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .student-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 60px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* Responsive Navbar */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 15px;
+            }
+            .stat-item:last-child { border-bottom: none; }
+            .hero h2 { font-size: 2rem; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-envelope"></i> successjapanese52@gmail.com</span>
+            <span><i class="fas fa-phone-alt"></i> +880 1796-663354</span>
+            <span><i class="fas fa-map-marker-alt"></i> ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ, ঢাকা-১৩২০</span>
         </div>
+        <div class="top-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+    <div class="custom-logo-icon">
+        <i class="fas fa-torii-gate"></i>
+    </div>
+    <div class="logo-text">
+        <h1>SUCCESS JAPANESE</h1>
+        <span>LANGUAGE CENTER</span>
+    </div>
+</a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="#courses">কোর্সসমূহ</a></li>
+                <li><a href="#why-us">কেন আমরা</a></li>
+                <li><a href="#quiz">লেভেল টেস্ট</a></li>
+                <li><a href="#reviews">রিভিউ</a></li>
+                <li><a href="#apply" class="btn-apply">ভর্তি হন</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-red-50 to-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">Experience is the key to success</span>
-                <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">জাপানে পড়াশোনা ও ক্যারিয়ার গড়ার বিশ্বস্ত প্রতিষ্ঠান</h1>
-                <p class="mt-4 text-gray-600 text-lg">আমাদের সাথে শিখুন জাপানি ভাষা (JLPT / NAT / SSW) এবং নিশ্চিত করুন আপনার জাপান যাত্রার স্বপ্ন। অভিজ্ঞ শিক্ষক দ্বারা আধুনিক পদ্ধতিতে পাঠদান।</p>
-                <div class="mt-8 flex space-x-4">
-                    <a href="#contact" class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition shadow-lg">ফ্রি কাউন্সেলিং বুক করুন</a>
-                    <a href="#courses" class="border border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">কোর্স দেখুন</a>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                <div class="bg-red-600 text-white p-6 rounded-xl text-center">
-                    <h3 class="text-2xl font-bold">নতুন ব্যাচে ভর্তি চলছে!</h3>
-                    <p class="text-sm mt-1">JLPT (N5 / N4) ও SSW প্রস্তুতি কোর্স</p>
-                </div>
-                <form class="mt-6 space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">আপনার নাম</label>
-                        <input type="text" placeholder="পুরো নাম লিখুন" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">মোবাইল নাম্বার</label>
-                        <input type="tel" placeholder="017xxxxxxxx" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">পছন্দের কোর্স</label>
-                        <select class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
-                            <option>JLPT N5 Course</option>
-                            <option>JLPT N4 Course</option>
-                            <option>SSW Preparation</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">আবেদন জমা দিন</button>
-                </form>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-badge">🇯🇵 জাপানে উচ্চশিক্ষা ও ক্যারিয়ারের বিশ্বস্ত প্রতিষ্ঠান</span>
+            <h2>সহজ উপায়ে জাপানি ভাষা শিখুন,<br>জাপানে সফল ক্যারিয়ার গড়ুন</h2>
+            <p>JLPT, NAT-TEST এবং SSW (Specified Skilled Worker) পরীক্ষার জন্য অভিজ্ঞ ও নেটিভ ট্রেইনার দ্বারা পরিচালিত স্পেশাল কোর্স।</p>
+            <div class="hero-btns">
+                <a href="#courses" class="btn-lg btn-primary">কোর্সসমূহ দেখুন</a>
+                <a href="#apply" class="btn-lg btn-outline">ফ্রি সেমিনারে যোগ দিন</a>
             </div>
         </div>
     </section>
 
+    <!-- Counter Stats Bar -->
+    <div class="stats-container">
+        <div class="stat-item">
+            <h3>৯৮%</h3>
+            <p>JLPT পাসের হার</p>
+        </div>
+        <div class="stat-item">
+            <h3>১,৫০০+</h3>
+            <p>সফল শিক্ষার্থী</p>
+        </div>
+        <div class="stat-item">
+            <h3>১০০%</h3>
+            <p>জাপান ভিসা গাইডেন্স</p>
+        </div>
+        <div class="stat-item">
+            <h3>১০+</h3>
+            <p>অভিজ্ঞ শিক্ষক</p>
+        </div>
+    </div>
+
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-800">আমাদের সম্পর্কে</h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto mt-2 mb-6"></div>
-            <p class="max-w-3xl mx-auto text-gray-600 text-lg">
-                Success Japanese Language Center জাপানে উচ্চশিক্ষা, স্টুডেন্ট ভিসা এবং SSW (Specified Skilled Worker) ভিসায় যেতে ইচ্ছুকদের জন্য একটি নির্ভরযোগ্য প্রতিষ্ঠান। আমরা মানসম্মত শিক্ষা ও সঠিক গাইডলাইনের মাধ্যমে শিক্ষার্থীদের সফলতার দিকে এগিয়ে নিয়ে যাই।
-            </p>
+    <section id="about">
+        <div class="section-title">
+            <h2>আমাদের সম্পর্কে</h2>
+            <div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+            <div>
+                <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=800&q=80" alt="Japan Campus" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow);">
+            </div>
+            <div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--secondary);">কেন "সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার"?</h3>
+                <p style="color: var(--text-muted); margin-bottom: 15px;">
+                    আমরা কেবল ভাষাই শেখাই না, বরং জাপানে আপনার পড়াশোনা ও চাকরির স্বপ্ন পূরণের পুরো প্রসেসে সঠিক দিকনির্দেশনা প্রদান করি। আমাদের আধুনিক ল্যাব, অডিও-ভিজ্যুয়াল ক্লাস এবং নিয়মিত স্পোকেন ক্লাসের মাধ্যমে শিক্ষার্থীরা দ্রুত আয়ত্ত করতে পারে।
+                </p>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    জাপানি সংস্কৃতি, কর্পোরেট শিষ্টাচার এবং ইন্টারভিউ প্রস্তুতির জন্য আমাদের রয়েছে বিশেষ গাইডলাইন।
+                </p>
+                <a href="#apply" class="btn-lg btn-primary" style="display: inline-block; padding: 10px 25px;">বিস্তারিত জানুন</a>
+            </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800">আমাদের কোর্সসমূহ</h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto mt-2 mb-12"></div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-t-4 border-red-600">
-                    <h3 class="text-xl font-bold">JLPT N5 Level</h3>
-                    <p class="text-gray-600 mt-2">প্রাথমিক স্তরের জাপানি ভাষা, হিরাগানা, কাতাকানা এবং বেসিক কানজি ও গ্রামার।</p>
-                    <div class="mt-4 font-semibold text-red-600">সময়কাল: ৩ মাস</div>
+    <section id="courses" style="background: #f1f5f9; max-width: 100%; padding: 80px 5%;">
+        <div style="max-width: 1300px; margin: 0 auto;">
+            <div class="section-title">
+                <h2>আমাদের জনপ্রিয় কোর্সসমূহ</h2>
+                <div></div>
+            </div>
+            <div class="course-grid">
+                <!-- N5 Course -->
+                <div class="course-card">
+                    <div class="course-header n5">
+                        <span class="course-badge">বেসিক</span>
+                        <h3>JLPT / NAT N5 Course</h3>
+                        <p>শুরু করার একদম প্রথম ধাপ</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> হিরাগানা, কাতাকানা ও বেসিক কাঞ্জি</li>
+                            <li><i class="fas fa-check-circle"></i> ৮০০+ শব্দভাণ্ডার (Vocabulary)</li>
+                            <li><i class="fas fa-check-circle"></i> দৈনন্দিন কথোপকথন</li>
+                            <li><i class="fas fa-check-circle"></i> মেয়াদের সময়কাল: ৪ মাস</li>
+                        </ul>
+                        <div class="course-price">৳ ২০,০০০</div>
+                        <a href="#apply" class="btn-lg btn-primary" style="text-align: center;">এনরোল করুন</a>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-t-4 border-red-600">
-                    <h3 class="text-xl font-bold">JLPT N4 Level</h3>
-                    <p class="text-gray-600 mt-2">মাধ্যমিক স্তরের কথোপকথন, ভোকাবুলারি ও পরীক্ষার বিশেষ প্রস্তুতি।</p>
-                    <div class="mt-4 font-semibold text-red-600">সময়কাল: ৩.৫ মাস</div>
+
+                <!-- N4 Course -->
+                <div class="course-card">
+                    <div class="course-header n4">
+                        <span class="course-badge">ইনটারমিডিয়েট</span>
+                        <h3>JLPT / NAT N4 Course</h3>
+                        <p>উচ্চশিক্ষা ও চাকরির প্রস্তুতি</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> অ্যাডভান্স গ্রামার ও কাঞ্জি</li>
+                            <li><i class="fas fa-check-circle"></i> ১৫০০+ শব্দভাণ্ডার</li>
+                            <li><i class="fas fa-check-circle"></i> লিসেনিং ফ্লুয়েন্সি প্র্যাকটিস</li>
+                            <li><i class="fas fa-check-circle"></i> মেয়াদের সময়কাল: ৪ মাস</li>
+                        </ul>
+                        <div class="course-price">৳ ৩০,০০০</div>
+                        <a href="#apply" class="btn-lg btn-primary" style="text-align: center;">এনরোল করুন</a>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-t-4 border-red-600">
-                    <h3 class="text-xl font-bold">SSW (Skilled Worker) Track</h3>
-                    <p class="text-gray-600 mt-2">জাপানে কাজের ভিসার জন্য ভাষা ও স্কিল টেস্টের সম্পূর্ণ গাইডলাইন।</p>
-                    <div class="mt-4 font-semibold text-red-600">বিশেষ প্রশিক্ষণ সহ</div>
+
+                <!-- SSW Course -->
+                <div class="course-card">
+                    <div class="course-header ssw">
+                        <span class="course-badge">ওয়ার্ক ভিসা</span>
+                        <h3>SSW Skills & Language</h3>
+                        <p>জাপানে সরাসরি চাকরির প্রস্তুতি</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> স্কিল এক্সাম প্রিপারেশন</li>
+                            <li><i class="fas fa-check-circle"></i> নার্সিং / ফুড সার্ভিস স্পেশাল</li>
+                            <li><i class="fas fa-check-circle"></i> জাপানিজ জব ইন্টারভিউ ট্রেনিং</li>
+                            <li><i class="fas fa-check-circle"></i> মেয়াদের সময়কাল: ৩ মাস</li>
+                        </ul>
+                        <div class="course-price">৳ ১৮,০০০</div>
+                        <a href="#apply" class="btn-lg btn-primary" style="text-align: center;">এনরোল করুন</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800">কেন আমাদের বেছে নেবেন?</h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto mt-2 mb-12"></div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-red-50 rounded-xl">
-                    <i class="fas.fa-chalkboard-teacher text-red-600 text-3xl mb-3"></i>
-                    <h4 class="font-bold text-lg">অভিজ্ঞ শিক্ষক</h4>
-                    <p class="text-sm text-gray-600 mt-1">দক্ষ ও অভিজ্ঞ মেন্টর দ্বারা নিয়মিত ক্লাস।”</p>
+    <!-- Why Choose Us -->
+    <section id="why-us" class="features">
+        <div class="section-title">
+            <h2>আমাদের বিশেষ সুবিধাসমূহ</h2>
+            <div></div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>নেটিভ ট্রেইনার</h3>
+                <p>জাপানি ব্যাকগ্রাউন্ডের শিক্ষক ও এক্স-জাপান গ্র্যাজুয়েটদের দ্বারা সরাসরি ক্লাস।</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-laptop-house"></i></div>
+                <h3>অনলাইন ও অফলাইন</h3>
+                <p>আপনার সুবিধামত সরাসরি ক্লাসরুমে অথবা লাইভ অনলাইন ক্লাসে যুক্ত হওয়ার সুযোগ।</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+                <h3>ভিসা প্রসেসিং সাপোর্ট</h3>
+                <p>স্টুডেন্ট ভিসা ও স্কিলড ওয়ার্কার ভিসার প্রসেসিং সংক্রান্ত সার্বিক সহযোগিতা।</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                <h3>স্পেশাল কাইওয়া (Kaiwa)</h3>
+                <p>দ্রুত মুখে ভাষা ফুটিয়ে তোলার জন্য প্রতিদিনের বিশেষ স্পোকেন বা Kaiwa সেশন।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JLPT Level Tester Quiz (Interactive) -->
+    <section id="quiz">
+        <div class="section-title">
+            <h2>আপনার জাপানিজ ভাষার দক্ষতা যাচাই করুন</h2>
+            <p style="color: var(--text-muted); text-align: center; margin-top: -10px;">একটি ছোট কুইজের মাধ্যমে আপনার লেভেল জানুন</p>
+            <div></div>
+        </div>
+        <div class="quiz-container">
+            <div id="quiz-step-1">
+                <h4 style="margin-bottom: 15px;">প্রশ্ন ১: জাপানি বর্ণমালার মূল প্রথম দুটি স্ক্রিপ্ট বা লিপি কী কী?</h4>
+                <div class="quiz-option" onclick="selectQuiz(this)">
+                    <input type="radio" name="q1"> কানিজ ও রোমাজি
                 </div>
-                <div class="p-6 bg-red-50 rounded-xl">
-                    <i class="fas.fa-passport text-red-600 text-3xl mb-3"></i>
-                    <h4 class="font-bold text-lg">ভিসা সাপোর্ট</h4>
-                    <p class="text-sm text-gray-600 mt-1">সঠিক ডকুমেন্টেশন ও গাইডলাইন।</p>
+                <div class="quiz-option" onclick="selectQuiz(this)">
+                    <input type="radio" name="q1"> হিরাগানা ও কাতাকানা
                 </div>
-                <div class="p-6 bg-red-50 rounded-xl">
-                    <i class="fas.fa-headset text-red-600 text-3xl mb-3"></i>
-                    <h4 class="font-bold text-lg">দুর্বলদের জন্য এক্সট্রা ক্লাস</h4>
-                    <p class="text-sm text-gray-600 mt-1">পড়াশোনায় পিছিয়ে থাকা শিক্ষার্থীদের বিশেষ যত্ন।</p>
+                <div class="quiz-option" onclick="selectQuiz(this)">
+                    <input type="radio" name="q1"> কাঞ্জি ও হিরাগানা
                 </div>
-                <div class="p-6 bg-red-50 rounded-xl">
-                    <i class="fas.fa-award text-red-600 text-3xl mb-3"></i>
-                    <h4 class="font-bold text-lg">সফলতার রেকর্ড</h4>
-                    <p class="text-sm text-gray-600 mt-1">অভিজ্ঞতাই সফলতার চাবিকাঠি।</p>
+                <button class="btn-lg btn-primary" style="width: 100%; margin-top: 15px; border: none;" onclick="nextQuiz(2)">পরবর্তী প্রশ্ন</button>
+            </div>
+            
+            <div id="quiz-step-2" style="display: none;">
+                <h4 style="margin-bottom: 15px;">প্রশ্ন ২: "Konnichiwa" (こんにちは) শব্দটির বাংলা অর্থ কী?</h4>
+                <div class="quiz-option" onclick="selectQuiz(this)">
+                    <input type="radio" name="q2"> শুভ সকাল
+                </div>
+                <div class="quiz-option" onclick="selectQuiz(this)">
+                    <input type="radio" name="q2"> শুভ অপরাহ্ন / হ্যালো
+                </div>
+                <div class="quiz-option" onclick="selectQuiz(this)">
+                    <input type="radio" name="q2"> ধন্যবাদ
+                </div>
+                <button class="btn-lg btn-primary" style="width: 100%; margin-top: 15px; border: none;" onclick="showQuizResult()">ফলাফল দেখুন</button>
+            </div>
+
+            <div id="quiz-result" style="display: none; text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 10px;">অভিনন্দন! 🎉</h3>
+                <p style="margin-bottom: 20px;">আপনার জন্য উপযুক্ত কোর্স: <strong>JLPT N5 (Beginner Course)</strong></p>
+                <a href="#apply" class="btn-lg btn-primary" style="display: inline-block;">কোর্সে সিট বুক করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" style="background: #f8fafc;">
+        <div class="section-title">
+            <h2>শিক্ষার্থীদের মতামত</h2>
+            <div></div>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"সাকসেস সেন্টারের সঠিক গাইডে আমি প্রথমবারেই NAT N5 পাস করেছি। এখানকার শিক্ষকদের বোঝানোর পদ্ধতি চমৎকার।"</p>
+                <div class="student-info">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Student">
+                    <div>
+                        <h4 style="color: var(--secondary);">তানিয়া আক্তার</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">N5 স্কলারশিপ প্রাপ্ত</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"SSW ক্যাটাগরিতে জাপানে জব পাওয়ার ক্ষেত্রে সাকসেস ল্যাঙ্গুয়েজ সেন্টার আমাকে কাঙ্ক্ষিত স্বপ্ন পূরণে সাহায্য করেছে।"</p>
+                <div class="student-info">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Student">
+                    <div>
+                        <h4 style="color: var(--secondary);">রাকিব হাসান</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">SSW ভিসায় টোকিওতে কর্মরত</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h2 class="text-3xl font-bold">যোগাযোগ করুন</h2>
-                <p class="mt-2 text-gray-400">যে কোনো প্রয়োজনে সরাসরি আমাদের সেন্টারে আসুন অথবা কল করুন।</p>
-                <div class="mt-6 space-y-4">
-                    <p><i class="fas.fa-map-marker-alt text-red-500 mr-3"></i> ঠিকানা: ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ, ঢাকা / ঢাকা অফিস</p>
-                    <p><i class="fas.fa-phone text-red-500 mr-3"></i> ফোন: +880 1796-663354</p>
-                    <p><i class="fas.fa-envelope text-red-500 mr-3"></i> ইমেইল: successjapanese52@gmail.com</p>
-                </div>
+    <!-- Application / Contact Form -->
+    <section id="apply">
+        <div class="apply-section">
+            <div class="section-title" style="color: var(--white);">
+                <h2 style="color: var(--white);">ভর্তির জন্য আবেদন করুন</h2>
+                <p style="opacity: 0.8;">ফ্রি কাউন্সিলিং বা কোর্সে ভর্তির জন্য নিচের ফর্মটি পূরণ করুন</p>
+                <div style="background: var(--white);"></div>
             </div>
-            <div>
-                <div class="bg-gray-800 p-6 rounded-xl">
-                    <h3 class="text-xl font-bold mb-4">ফেসবুক পেজে যুক্ত থাকুন</h3>
-                    <p class="text-gray-300 mb-4">আমাদের অফিশিয়াল পেজ দেখতে ভিজিট করুন:</p>
+            <form class="apply-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="আপনার পূর্ণ নাম" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="মোবাইল নম্বর" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">কোর্স নির্বাচন করুন</option>
+                        <option value="n5">JLPT / NAT N5 (বিগিনার)</option>
+                        <option value="n4">JLPT / NAT N4 (এডভান্স)</option>
+                        <option value="ssw">SSW ওয়ার্ক ভিসা কোর্স</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="আপনার প্রশ্ন বা মন্তব্য (যদি থাকে)"></textarea>
+                </div>
+                <button type="submit" class="btn-lg btn-primary" style="width: 100%; border: none; cursor: pointer;">আবেদন জমা দিন</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SUCCESS JAPANESE</h4>
+                <p style="color: #cbd5e1; font-size: 0.9rem;">আমরা জাপানি ভাষা শিক্ষা এবং জাপানে ক্যারিয়ার গড়ার জন্য দেশের অন্যতম শীর্ষস্থানীয় ল্যাঙ্গুয়েজ সেন্টার।</p>
+            </div>
+            <div class="footer-col">
+                <h4>কুইক লিঙ্ক</h4>
+                <ul>
+                    <li><a href="#home">হোম</a></li>
+                    <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#courses">কোর্সসমূহ</a></li>
+                    <li><a href="#apply">অনলাইন ভর্তি</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>কোর্সসমূহ</h4>
+                <ul>
+                    <li><a href="#courses">JLPT N5 Course</a></li>
+                    <li><a href="#courses">JLPT N4 Course</a></li>
+                    <li><a href="#courses">SSW Visa Preparation</a></li>
+                    <li><a href="#courses">Japanese Spoken (Kaiwa)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>যোগাযোগ</h4>
+                <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 8px;"><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ, ঢাকা-১৩২০</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 8px;"><i class="fas fa-phone-alt" style="color: var(--primary);"></i> +880 1796-663354</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem;"><i class="fas fa-envelope" style="color: var(--primary);"></i> successjapanese52@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Success Japanese Language Center. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Quiz Selection Helper
+        function selectQuiz(element) {
+            const radio = element.querySelector('input[type="radio"]');
+            if (radio) {
+                radio.checked = true;
+            }
+        }
+
+        // Quiz Step Switching
+        function nextQuiz(step) {
+            document.getElementById('quiz-step-1').style.display = 'none';
+            document.getElementById('quiz-step-2').style.display = 'block';
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-step-2').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('ধন্যবাদ! আপনার আবেদন সফলভাবে গৃহীত হয়েছে। খুব শীঘ্রই আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবেন।');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
