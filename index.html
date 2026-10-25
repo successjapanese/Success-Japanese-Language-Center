@@ -3,143 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUCCESS JAPANESE LANGUAGE CENTER</title>
-    <!-- Tailwind CSS for modern and responsive styling -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        html { scroll-behavior: smooth; }
-    </style>
+    <title>Success Japanese Language Center</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://cloudflare.com" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-3">
-                    <img id="nav-logo" src="logo.png" alt="Logo" class="h-14 w-14 object-contain rounded-full border border-red-500" onerror="this.src='https://placehold.co'">
-                    <div>
-                        <span class="text-xl font-bold text-red-600 block">SUCCESS JAPANESE</span>
-                        <span class="text-xs text-gray-500 tracking-wider">LANGUAGE CENTER</span>
-                    </div>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-red-600">🇯🇵 Success</span>
+                    <span class="ml-2 text-lg font-semibold text-gray-700">Japanese Language Center</span>
                 </div>
-                <div class="hidden md:flex space-x-6 font-medium">
+                <nav class="hidden md:flex space-x-8 font-medium">
                     <a href="#home" class="hover:text-red-600 transition">হোম</a>
+                    <a href="#about" class="hover:text-red-600 transition">আমাদের সম্পর্কে</a>
                     <a href="#courses" class="hover:text-red-600 transition">কোর্সসমূহ</a>
-                    <a href="#consultancy" class="hover:text-red-600 transition">ভিসা প্রসেসিং</a>
-                    <a href="#admission" class="hover:text-red-600 transition">অনলাইন ভর্তি</a>
-                    <a href="#blog" class="hover:text-red-600 transition">ব্লগ</a>
+                    <a href="#why-us" class="hover:text-red-600 transition">কেন আমরা</a>
                     <a href="#contact" class="hover:text-red-600 transition">যোগাযোগ</a>
+                </nav>
+                <div>
+                    <a href="#contact" class="bg-red-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-red-700 transition">ভর্তি চলছে</a>
                 </div>
-                <!-- মেনুবারের বাটনটি লাল এবং স্পষ্ট করা হয়েছে -->
-                <button onclick="toggleAdminModal()" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition flex items-center gap-2 text-sm font-bold shadow-md">
-                    <i class="fa-solid fa-lock"></i> অ্যাডমিন প্যানেল
-                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- MOBILE FLOATING ADMIN BUTTON (মোবাইলে সহজে খুঁজে পাওয়ার জন্য স্ক্রিনের নিচে থাকবে) -->
-    <div class="fixed bottom-6 right-6 z-50 md:hidden">
-        <button onclick="toggleAdminModal()" class="bg-red-600 text-white p-4 rounded-full shadow-2xl hover:bg-red-700 transition flex items-center justify-center border-2 border-white">
-            <i class="fa-solid fa-lock text-xl"></i>
-        </button>
-    </div>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="relative bg-red-50 py-20 px-4 overflow-hidden text-center md:text-left">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-red-50 to-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="bg-red-100 text-red-700 text-xs font-bold uppercase px-3 py-1 rounded-full">Explore Japan 🇯🇵</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 leading-tight">জাপানি ভাষা শিখুন, <br><span class="text-red-600">উচ্চশিক্ষা ও ক্যারিয়ার</span> গড়ুন জাপানে!</h1>
-                <p class="text-gray-600 mt-4 text-lg">অভিজ্ঞ মেন্টরদের তত্ত্বাবধানে NAT/JLPT N5 থেকে N3 লেভেলের সম্পূর্ণ প্রস্তুতি এবং ১০০% নির্ভরযোগ্য স্টুডেন্ট ভিসা কনসালটেন্সি।</p>
-                <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="#admission" class="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 font-semibold transition">ভর্তি হোন এখনই</a>
-                    <a href="#courses" class="bg-white text-gray-800 border border-gray-300 px-6 py-3 rounded-lg shadow-sm hover:bg-gray-50 font-semibold transition">কোর্সসমূহ দেখুন</a>
+                <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">Experience is the key to success</span>
+                <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">জাপানে পড়াশোনা ও ক্যারিয়ার গড়ার বিশ্বস্ত প্রতিষ্ঠান</h1>
+                <p class="mt-4 text-gray-600 text-lg">আমাদের সাথে শিখুন জাপানি ভাষা (JLPT / NAT / SSW) এবং নিশ্চিত করুন আপনার জাপান যাত্রার স্বপ্ন। অভিজ্ঞ শিক্ষক দ্বারা আধুনিক পদ্ধতিতে পাঠদান।</p>
+                <div class="mt-8 flex space-x-4">
+                    <a href="#contact" class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition shadow-lg">ফ্রি কাউন্সেলিং বুক করুন</a>
+                    <a href="#courses" class="border border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition">কোর্স দেখুন</a>
                 </div>
             </div>
-            <div class="flex justify-center">
-                <img src="https://unsplash.com" alt="Japan" class="rounded-2xl shadow-2xl border-4 border-white max-w-full h-auto">
-            </div>
-        </div>
-    </section>
-
-    <!-- COURSES SECTION -->
-    <section id="courses" class="py-20 max-w-7xl mx-auto px-4">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold text-gray-900">আমাদের অফারকৃত কোর্সসমূহ</h2>
-            <p class="text-gray-500 mt-2">আপনার প্রয়োজন অনুযায়ী সঠিক লেভেলটি বেছে নিন।</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                <div class="p-6">
-                    <span class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded">Beginner</span>
-                    <h3 class="text-xl font-bold mt-3 text-gray-900">JLPT/NAT N5 Course</h3>
-                    <p class="text-gray-600 mt-2 text-sm">হিরাগানা, কাতাকানা, মৌলিক কাঞ্জি এবং দৈনন্দিন কথোপকথনের প্রাথমিক ধারণা।</p>
-                    <div class="mt-6 flex justify-between items-center border-t pt-4">
-                        <span class="text-lg font-extrabold text-red-600">৳ ৫,৫০০</span>
-                        <a href="#admission" class="text-sm font-bold text-gray-800 hover:text-red-600 flex items-center gap-1">ভর্তি ফরম <i class="fa-solid fa-arrow-right text-xs"></i></a>
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+                <div class="bg-red-600 text-white p-6 rounded-xl text-center">
+                    <h3 class="text-2xl font-bold">নতুন ব্যাচে ভর্তি চলছে!</h3>
+                    <p class="text-sm mt-1">JLPT (N5 / N4) ও SSW প্রস্তুতি কোর্স</p>
+                </div>
+                <form class="mt-6 space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">আপনার নাম</label>
+                        <input type="text" placeholder="পুরো নাম লিখুন" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                     </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                <div class="p-6">
-                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded">Intermediate</span>
-                    <h3 class="text-xl font-bold mt-3 text-gray-900">JLPT/NAT N4 Course</h3>
-                    <p class="text-gray-600 mt-2 text-sm">উнят ব্যাকরণ, ৩০০+ কাঞ্জি এবং জাপানিজ কাজের ক্ষেত্রে প্রয়োজনীয় কথাবলার দক্ষতা।</p>
-                    <div class="mt-6 flex justify-between items-center border-t pt-4">
-                        <span class="text-lg font-extrabold text-red-600">৳ ৬,৫০০</span>
-                        <a href="#admission" class="text-sm font-bold text-gray-800 hover:text-red-600 flex items-center gap-1">ভর্তি ফরম <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">মোবাইল নাম্বার</label>
+                        <input type="tel" placeholder="017xxxxxxxx" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                     </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                <div class="p-6">
-                    <span class="text-xs font-bold bg-purple-100 text-purple-700 px-2 py-1 rounded">Job Focused</span>
-                    <h3 class="text-xl font-bold mt-3 text-gray-900">SSW / Specified Skilled Worker</h3>
-                    <p class="text-gray-600 mt-2 text-sm">জাপানে সরাসরি কাজের ভিসার জন্য বিশেষ ভাষা প্রশিক্ষণ এবং স্কিল টেস্ট গাইডলাইন।</p>
-                    <div class="mt-6 flex justify-between items-center border-t pt-4">
-                        <span class="text-lg font-extrabold text-red-600">৳ ৮,০০০</span>
-                        <a href="#admission" class="text-sm font-bold text-gray-800 hover:text-red-600 flex items-center gap-1">ভর্তি ফরম <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">পছন্দের কোর্স</label>
+                        <select class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option>JLPT N5 Course</option>
+                            <option>JLPT N4 Course</option>
+                            <option>SSW Preparation</option>
+                        </select>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VISA PROCESSING & CONSULTANCY -->
-    <section id="consultancy" class="bg-gray-900 text-white py-20 px-4">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-red-500">জাপান স্টুডেন্ট ভিসা ও কনসালটেন্সি</h2>
-                <p class="text-gray-300 mt-4 leading-relaxed">আমরা শিক্ষার্থীদের জাপানের সেরা ল্যাঙ্গুয়েজ স্কুল এবং ইউনিভার্সিটিগুলোতে শতভাগ সফলতার সাথে অ্যাডমিশন ও ভিসা প্রসেসিং সেবা দিয়ে আসছি।</p>
-            </div>
-            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-                <h3 class="text-xl font-bold text-white mb-4">ফ্রি কনসালটেন্সি বুক করুন</h3>
-                <form onsubmit="alert('আপনার রিকোয়েস্ট সফলভাবে জমা হয়েছে!'); this.reset(); return false;" class="space-y-4 text-gray-900">
-                    <input type="text" placeholder="আপনার নাম" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border outline-none">
-                    <input type="tel" placeholder="মোবাইল নম্বর" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border outline-none">
-                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition shadow-md">সাবমিট করুন</button>
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">আবেদন জমা দিন</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ADMISSION FORM -->
-    <section id="admission" class="py-20 max-w-3xl mx-auto px-4">
-        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
-            <div class="text-center mb-8">
-                <i class="fa-solid fa-user-graduate text-4xl text-red-600 mb-2"></i>
-                <h2 class="text-3xl font-bold text-gray-900">অনলাইন ভর্তি ফরম</h2>
-                <p class="text-gray-500 text-sm mt-1">সঠিক তথ্য দিয়ে নিচের ফরমটি পূরণ করুন।</p>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">আমাদের সম্পর্কে</h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto mt-2 mb-6"></div>
+            <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+                Success Japanese Language Center জাপানে উচ্চশিক্ষা, স্টুডেন্ট ভিসা এবং SSW (Specified Skilled Worker) ভিসায় যেতে ইচ্ছুকদের জন্য একটি নির্ভরযোগ্য প্রতিষ্ঠান। আমরা মানসম্মত শিক্ষা ও সঠিক গাইডলাইনের মাধ্যমে শিক্ষার্থীদের সফলতার দিকে এগিয়ে নিয়ে যাই।
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800">আমাদের কোর্সসমূহ</h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto mt-2 mb-12"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-t-4 border-red-600">
+                    <h3 class="text-xl font-bold">JLPT N5 Level</h3>
+                    <p class="text-gray-600 mt-2">প্রাথমিক স্তরের জাপানি ভাষা, হিরাগানা, কাতাকানা এবং বেসিক কানজি ও গ্রামার।</p>
+                    <div class="mt-4 font-semibold text-red-600">সময়কাল: ৩ মাস</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-t-4 border-red-600">
+                    <h3 class="text-xl font-bold">JLPT N4 Level</h3>
+                    <p class="text-gray-600 mt-2">মাধ্যমিক স্তরের কথোপকথন, ভোকাবুলারি ও পরীক্ষার বিশেষ প্রস্তুতি।</p>
+                    <div class="mt-4 font-semibold text-red-600">সময়কাল: ৩.৫ মাস</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition border-t-4 border-red-600">
+                    <h3 class="text-xl font-bold">SSW (Skilled Worker) Track</h3>
+                    <p class="text-gray-600 mt-2">জাপানে কাজের ভিসার জন্য ভাষা ও স্কিল টেস্টের সম্পূর্ণ গাইডলাইন।</p>
+                    <div class="mt-4 font-semibold text-red-600">বিশেষ প্রশিক্ষণ সহ</div>
+                </div>
             </div>
-            
-            <form id="admissionForm" onsubmit="handleAdmissionSubmit(event)" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">শিক্ষার্থীর নাম *</label>
-                        <input type="text" id="studentName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none text-sm">
-                    </div>
-                    <div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800">কেন আমাদের বেছে নেবেন?</h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto mt-2 mb-12"></div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-red-50 rounded-xl">
+                    <i class="fas.fa-chalkboard-teacher text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">অভিজ্ঞ শিক্ষক</h4>
+                    <p class="text-sm text-gray-600 mt-1">দক্ষ ও অভিজ্ঞ মেন্টর দ্বারা নিয়মিত ক্লাস।”</p>
+                </div>
+                <div class="p-6 bg-red-50 rounded-xl">
+                    <i class="fas.fa-passport text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">ভিসা সাপোর্ট</h4>
+                    <p class="text-sm text-gray-600 mt-1">সঠিক ডকুমেন্টেশন ও গাইডলাইন।</p>
+                </div>
+                <div class="p-6 bg-red-50 rounded-xl">
+                    <i class="fas.fa-headset text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">দুর্বলদের জন্য এক্সট্রা ক্লাস</h4>
+                    <p class="text-sm text-gray-600 mt-1">পড়াশোনায় পিছিয়ে থাকা শিক্ষার্থীদের বিশেষ যত্ন।</p>
+                </div>
+                <div class="p-6 bg-red-50 rounded-xl">
+                    <i class="fas.fa-award text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">সফলতার রেকর্ড</h4>
+                    <p class="text-sm text-gray-600 mt-1">অভিজ্ঞতাই সফলতার চাবিকাঠি।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-3xl font-bold">যোগাযোগ করুন</h2>
+                <p class="mt-2 text-gray-400">যে কোনো প্রয়োজনে সরাসরি আমাদের সেন্টারে আসুন অথবা কল করুন।</p>
+                <div class="mt-6 space-y-4">
+                    <p><i class="fas.fa-map-marker-alt text-red-500 mr-3"></i> ঠিকানা: ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ, ঢাকা / ঢাকা অফিস</p>
+                    <p><i class="fas.fa-phone text-red-500 mr-3"></i> ফোন: +880 1796-663354</p>
+                    <p><i class="fas.fa-envelope text-red-500 mr-3"></i> ইমেইল: successjapanese52@gmail.com</p>
+                </div>
+            </div>
+            <div>
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4">ফেসবুক পেজে যুক্ত থাকুন</h3>
+                    <p class="text-gray-300 mb-4">আমাদের অফিশিয়াল পেজ দেখতে ভিজিট করুন:</p>
