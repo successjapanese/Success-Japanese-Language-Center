@@ -1,1125 +1,1421 @@
 <!DOCTYPE html>
-<html lang="bn" class="scroll-smooth">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success Japanese Language Center | সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Hind Siliguri (Bengali) & Inter (English) -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        jpRed: '#bc002d',
-                        jpDarkRed: '#8b0021',
-                        jpSakura: '#ffb7c5',
-                        jpLightSakura: '#fff0f3',
-                        slateDark: '#1e293b',
-                    },
-                    fontFamily: {
-                        bn: ['Hind Siliguri', 'sans-serif'],
-                        en: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --primary: #bc002d; /* Japanese Sun Crimson */
+            --primary-dark: #8b0021;
+            --secondary: #0f172a;
+            --accent: #ffb7c5; /* Sakura Pink */
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Poppins', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Hind Siliguri', 'Inter', sans-serif;
-            background-color: #f8fafc;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        .bg-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#bc002d 0.5px, transparent 0.5px), radial-gradient(#bc002d 0.5px, #ffffff 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0,10px 10px;
-            background-opacity: 0.05;
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(30,41,59,0.92) 0%, rgba(188,0,45,0.85) 100%), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1600&auto=format&fit=crop');
+
+        .top-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .top-info i {
+            color: var(--accent);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-switch-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lang-switch-btn:hover {
+            background: var(--primary);
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img-preview {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .logo-icon-fallback {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 0 12px rgba(188, 0, 45, 0.4);
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            color: var(--primary);
+            letter-spacing: 0.8px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-apply {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-apply:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .admin-nav-btn {
+            background: var(--secondary);
+            color: var(--white) !important;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(139, 0, 33, 0.85)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
+            color: var(--white);
+            padding: 90px 5% 110px;
+            text-align: center;
         }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 6px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+
+        .hero h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #bc002d;
-            border-radius: 4px;
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-lg {
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #d60033;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--secondary);
+        }
+
+        /* Stats Bar */
+        .stats-container {
+            max-width: 1100px;
+            margin: -45px auto 0;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .section-title div {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Services Grid with Images */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-img-box {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img-box img {
+            transform: scale(1.08);
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Course Cards */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-header {
+            color: var(--white);
+            padding: 22px;
+            text-align: center;
+            position: relative;
+        }
+
+        .course-header.n5 { background: linear-gradient(45deg, #1e293b, #334155); }
+        .course-header.n4 { background: linear-gradient(45deg, #8b0021, #bc002d); }
+        .course-header.ssw { background: linear-gradient(45deg, #0f766e, #0d9488); }
+
+        .course-body {
+            padding: 22px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-features {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .course-features li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-features i { color: #10b981; }
+
+        .course-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        /* Quiz */
+        .quiz-container {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .quiz-option {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            padding: 12px 18px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: #fff5f7;
+        }
+
+        /* Application Form Section */
+        .apply-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1528164344705-47542687990d?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            color: var(--white);
+            border-radius: 20px;
+            padding: 45px 5%;
+        }
+
+        .apply-form {
+            max-width: 550px;
+            margin: 0 auto;
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .student-info img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Admin Section / Dashboard */
+        .admin-dashboard {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .admin-table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--light-bg);
+            color: var(--secondary);
+        }
+
+        .badge {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-pending { background: #fef3c7; color: #92400e; }
+        .badge-contacted { background: #e0f2fe; color: #0369a1; }
+        .badge-enrolled { background: #d1fae5; color: #065f46; }
+
+        .btn-action {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px 8px;
+            color: var(--text-muted);
+            transition: 0.2s;
+        }
+
+        .btn-action:hover { color: var(--primary); }
+
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 50px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover { color: var(--white); }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 18px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 12px;
+            }
+            .stat-item:last-child { border-bottom: none; }
+            .hero h2 { font-size: 1.9rem; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
         }
     </style>
 </head>
-<body class="text-slate-800 font-bn antialiased flex flex-col min-h-screen">
+<body>
 
     <!-- Top Info Bar -->
-    <div class="bg-slateDark text-slate-200 text-xs sm:text-sm py-2 px-4 shadow-inner border-b border-slate-700">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-jpRed"></i> <span data-i18n="topAddress">ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা</span></span>
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-emerald-400"></i> <a href="tel:+8801796663354, +8801840000177" class="hover:underline">+8801796663354, +8801840000177</a></span>
-                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-jpSakura"></i> successjapanese52@gmail.com</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <span class="hidden lg:inline text-slate-400 text-xs" data-i18n="tagline">জাপানে আপনার স্বপ্নের ক্যারিয়ার গড়ার বিশ্বস্ত সঙ্গী</span>
-                <!-- Language Switcher Button -->
-                <button id="langToggle" onclick="toggleLanguage()" class="flex items-center gap-1.5 bg-jpRed hover:bg-jpDarkRed text-white px-3 py-1 rounded-full text-xs font-semibold transition-all shadow-md transform hover:scale-105">
-                    <i class="fa-solid fa-globe"></i>
-                    <span id="langText">English</span>
-                </button>
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-envelope"></i> info@successjapanese.com</span>
+            <span><i class="fas fa-phone-alt"></i> +880 1700-000000</span>
+            <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">ওহমা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা</span></span>
+        </div>
+        <div class="top-actions">
+            <button class="lang-switch-btn" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i> <span id="lang-btn-text">English</span>
+            </button>
+            <div class="top-social">
+                <a href="#" style="color:white; margin-left:8px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color:white; margin-left:8px;"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation -->
-    <nav class="bg-white sticky top-0 z-40 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo & Brand Name -->
-                <div class="flex items-center gap-3">
-                    <div id="brandLogoContainer" class="relative group cursor-pointer" onclick="openLogoModal()">
-                        <img id="mainLogo" src="https://images.unsplash.com/photo-1528164344705-47542687990d?q=80&w=200&auto=format&fit=crop" alt="Logo" class="w-12 h-12 rounded-full object-cover border-2 border-jpRed shadow-sm">
-                        <div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <i class="fa-solid fa-camera text-white text-xs"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="#" class="font-bold text-xl sm:text-2xl text-slateDark leading-tight block" data-i18n="brandTitle">সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</a>
-                        <span class="text-xs text-jpRed font-medium tracking-wider block" data-i18n="subTitle">SUCCESS JAPANESE LANGUAGE CENTER</span>
-                    </div>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div id="logo-container">
+                    <div class="logo-icon-fallback"><i class="fas fa-torii-gate"></i></div>
                 </div>
+                <div class="logo-text">
+                    <h1>SUCCESS</h1>
+                    <span>JAPANESE LANGUAGE CENTER</span>
+                </div>
+            </a>
 
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-700">
-                    <a href="#hero" class="hover:text-jpRed transition-colors" data-i18n="navHome">হোম</a>
-                    <a href="#about" class="hover:text-jpRed transition-colors" data-i18n="navAbout">আমাদের সম্পর্কে</a>
-                    <a href="#services" class="hover:text-jpRed transition-colors" data-i18n="navServices">সেবাসমূহ</a>
-                    <a href="#courses" class="hover:text-jpRed transition-colors" data-i18n="navCourses">কোর্সসমূহ</a>
-                    <a href="#quiz" class="hover:text-jpRed transition-colors" data-i18n="navQuiz">লেভেল টেস্ট</a>
-                    <a href="#apply" class="hover:text-jpRed transition-colors" data-i18n="navApply">ভর্তি আবেদন</a>
-                    <a href="#contact" class="hover:text-jpRed transition-colors" data-i18n="navContact">যোগাযোগ</a>
-                    
-                    <!-- Admin Button -->
-                    <button onclick="openAdminModal()" class="relative bg-slate-800 text-white px-3.5 py-1.5 rounded-lg hover:bg-slate-900 transition flex items-center gap-1.5 text-xs font-medium">
-                        <i class="fa-solid fa-user-shield text-jpSakura"></i>
-                        <span data-i18n="navAdmin">এডমিন</span>
-                        <span id="pendingBadge" class="hidden bg-jpRed text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full -ml-1">0</span>
-                    </button>
-                </div>
-
-                <!-- Mobile Hamburger Button -->
-                <div class="md:hidden flex items-center gap-2">
-                    <button onclick="openAdminModal()" class="relative bg-slate-800 text-white p-2 rounded-lg text-xs">
-                        <i class="fa-solid fa-user-shield"></i>
-                        <span id="pendingBadgeMobile" class="hidden absolute -top-1 -right-1 bg-jpRed text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-                    </button>
-                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-jpRed focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
             </div>
-        </div>
 
-        <!-- Mobile Menu Nav -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 shadow-lg">
-            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navHome">হোম</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navAbout">আমাদের সম্পর্কে</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navServices">সেবাসমূহ</a>
-            <a href="#courses" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navCourses">কোর্সসমূহ</a>
-            <a href="#quiz" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navQuiz">লেভেল টেস্ট</a>
-            <a href="#apply" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navApply">ভর্তি আবেদন</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium hover:text-jpRed" data-i18n="navContact">যোগাযোগ</a>
-        </div>
-    </nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-i18n="nav_home">হোম</a></li>
+                <li><a href="#services" data-i18n="nav_services">আমাদের সেবা</a></li>
+                <li><a href="#courses" data-i18n="nav_courses">কোর্সসমূহ</a></li>
+                <li><a href="#quiz" data-i18n="nav_quiz">লেভেল টেস্ট</a></li>
+                <li><a href="#apply" class="btn-apply" data-i18n="nav_apply">ভর্তি হন</a></li>
+                <li>
+                    <button id="admin-nav-trigger" class="btn-lg admin-nav-btn" onclick="handleAdminNavClick()">
+                        <i class="fas fa-lock"></i> <span id="admin-btn-label" data-i18n="nav_admin">এডমিন লগইন</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-bg text-white py-20 lg:py-28 px-4 relative">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-            <div class="md:w-1/2 text-center md:text-left space-y-6">
-                <span class="inline-block bg-jpRed/90 text-white px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide border border-jpSakura/30 backdrop-blur-sm" data-i18n="heroBadge">
-                    🌸 জাপানি ভাষা ও স্টুডেন্ট/ওয়ার্ক ভিসা সেন্টার
-                </span>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" data-i18n="heroTitle">
-                    সহজ উপায়ে জাপানি ভাষা শিখুন, জাপানে উজ্জ্বল ভবিষ্যৎ গড়ে তুলুন
-                </h1>
-                <p class="text-slate-200 text-base sm:text-lg max-w-xl font-light" data-i18n="heroDesc">
-                    নবাবগঞ্জের অভিজ্ঞ ও সার্টিফাইড শিক্ষকদের পরিচর্যায় JLPT, NAT ও SSW পরীক্ষার সর্বোচ্চ মানের প্রস্তুতি গ্রহণ করুন। সরাসরি জাপানিজ সংস্কৃতির অভিজ্ঞতা লাভ করুন।
-                </p>
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
-                    <a href="#apply" class="bg-jpRed hover:bg-jpDarkRed text-white px-7 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-red-900/40 transition-all transform hover:-translate-y-0.5 flex items-center gap-2" data-i18n="heroBtn1">
-                        <i class="fa-solid fa-pen-to-square"></i> এখনই ভর্তি হন
-                    </a>
-                    <a href="#quiz" class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 px-6 py-3.5 rounded-xl font-bold transition flex items-center gap-2" data-i18n="heroBtn2">
-                        <i class="fa-solid fa-circle-question"></i> ফ্রি লেভেল টেস্ট
-                    </a>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-badge" data-i18n="hero_badge">🇯🇵 জাপানে উচ্চশিক্ষা ও ক্যারিয়ারের বিশ্বস্ত প্রতিষ্ঠান</span>
+            <h2 data-i18n="hero_title">সহজ উপায়ে জাপানি ভাষা শিখুন,<br>জাপানে সফল ক্যারিয়ার গড়ুন</h2>
+            <p data-i18n="hero_desc">JLPT, NAT-TEST এবং SSW (Specified Skilled Worker) পরীক্ষার জন্য অভিজ্ঞ ও নেটিভ ট্রেইনার দ্বারা পরিচালিত স্পেশাল কোর্স।</p>
+            <div class="hero-btns">
+                <a href="#courses" class="btn-lg btn-primary" data-i18n="hero_btn_courses">কোর্সসমূহ দেখুন</a>
+                <a href="#apply" class="btn-lg btn-outline" data-i18n="hero_btn_apply">অনলাইন ভর্তি</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Stats Bar -->
+    <div class="stats-container">
+        <div class="stat-item">
+            <h3>৯৮%</h3>
+            <p data-i18n="stat_pass">JLPT পাসের হার</p>
+        </div>
+        <div class="stat-item">
+            <h3>১,৫০০+</h3>
+            <p data-i18n="stat_students">সফল শিক্ষার্থী</p>
+        </div>
+        <div class="stat-item">
+            <h3>১০০%</h3>
+            <p data-i18n="stat_visa">জাপান ভিসা গাইডেন্স</p>
+        </div>
+        <div class="stat-item">
+            <h3>১০+</h3>
+            <p data-i18n="stat_teachers">অভিজ্ঞ শিক্ষক</p>
+        </div>
+    </div>
+
+    <!-- Services Section with 4 Pictures -->
+    <section id="services">
+        <div class="section-title">
+            <h2 data-i18n="services_title">আমাদের সেবাসমূহ</h2>
+            <div></div>
+        </div>
+        <div class="service-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1528164344705-47542687990d?auto=format&fit=crop&w=600&q=80" alt="JLPT Training">
+                </div>
+                <div class="service-content">
+                    <h3 data-i18n="srv_1_title">JLPT / NAT পরীক্ষা প্রস্তুতি</h3>
+                    <p data-i18n="srv_1_desc">N5 এবং N4 লেভেলের জন্য মানসম্মত অডিও-ভিজ্যুয়াল ক্লাস এবং মক টেস্ট সাপোর্ট।</p>
                 </div>
             </div>
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=600&q=80" alt="SSW Job Training">
+                </div>
+                <div class="service-content">
+                    <h3 data-i18n="srv_2_title">SSW ওয়ার্ক ভিসা ট্রেনিং</h3>
+                    <p data-i18n="srv_2_desc">স্পেসিফাইড স্কিল্ড ওয়ার্কারদের জন্য স্কিল এক্সাম প্রিপারেশন এবং জব ইন্টারভিউ গাইডেন্স।</p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80" alt="Kaiwa Spoken Practice">
+                </div>
+                <div class="service-content">
+                    <h3 data-i18n="srv_3_title">জাপানি স্পোকেন (Kaiwa)</h3>
+                    <p data-i18n="srv_3_desc">দৈনন্দিন কথাবলা এবং নেটিভ স্টাইলে স্পষ্ট উচ্চারণ শেখার বিশেষ ডাইনিং ও কাইওয়া সেশন।</p>
+                </div>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="Visa Processing Support">
+                </div>
+                <div class="service-content">
+                    <h3 data-i18n="srv_4_title">স্টুডেন্ট ও ভিসা প্রসেসিং</h3>
+                    <p data-i18n="srv_4_desc">জাপানে উচ্চশিক্ষা ও স্টুডেন্ট ভিসার সঠিক ফাইল প্রসেসিং এবং ডকুমেন্টেশন সহায়তা।</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Hero Stats Box -->
-            <div class="md:w-5/12 w-full bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl text-white">
-                <h3 class="text-xl font-bold mb-4 border-b border-white/20 pb-2 flex items-center gap-2" data-i18n="heroCardTitle">
-                    <i class="fa-solid fa-award text-yellow-400"></i> কেন আমাদের বেছে নেবেন?
-                </h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-jpSakura">৯৫%+</p>
-                        <p class="text-xs text-slate-300" data-i18n="stat1">পাস রেট (JLPT/NAT)</p>
+    <!-- Courses Section -->
+    <section id="courses" style="background: #f1f5f9; max-width: 100%;">
+        <div style="max-width: 1300px; margin: 0 auto; padding: 0 5%;">
+            <div class="section-title">
+                <h2 data-i18n="courses_title">আমাদের কোর্সসমূহ</h2>
+                <div></div>
+            </div>
+            <div class="course-grid">
+                <!-- N5 -->
+                <div class="course-card">
+                    <div class="course-header n5">
+                        <h3>JLPT / NAT N5</h3>
+                        <p data-i18n="c_n5_sub">শুরু করার প্রথম ধাপ</p>
                     </div>
-                    <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-emerald-400">১০০%</p>
-                        <p class="text-xs text-slate-300" data-i18n="stat2">ভিসা গাইডেন্স</p>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_n5_f1">হিরাগানা, কাতাকানা ও কাঞ্জি</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_n5_f2">৮০০+ শব্দভাণ্ডার (Vocabulary)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_n5_f3">মেয়াদ: ৪ মাস</span></li>
+                        </ul>
+                        <div class="course-price">৳ ১২,০০০</div>
+                        <a href="#apply" class="btn-lg btn-primary" style="text-align:center;" data-i18n="enroll_btn">ভর্তি হন</a>
                     </div>
-                    <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-amber-300">৫০০+</p>
-                        <p class="text-xs text-slate-300" data-i18n="stat3">সফল শিক্ষার্থী</p>
+                </div>
+                <!-- N4 -->
+                <div class="course-card">
+                    <div class="course-header n4">
+                        <h3>JLPT / NAT N4</h3>
+                        <p data-i18n="c_n4_sub">উচ্চশিক্ষা ও চাকরির প্রস্তুতি</p>
                     </div>
-                    <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-sky-300">১০+</p>
-                        <p class="text-xs text-slate-300" data-i18n="stat4">অভিজ্ঞ ইনস্ট্রাক্টর</p>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_n4_f1">অ্যাডভান্স গ্রামার ও কাঞ্জি</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_n4_f2">১৫০০+ শব্দভাণ্ডার</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_n4_f3">মেয়াদ: ৪ মাস</span></li>
+                        </ul>
+                        <div class="course-price">৳ ১৫,০০০</div>
+                        <a href="#apply" class="btn-lg btn-primary" style="text-align:center;" data-i18n="enroll_btn">ভর্তি হন</a>
+                    </div>
+                </div>
+                <!-- SSW -->
+                <div class="course-card">
+                    <div class="course-header ssw">
+                        <h3>SSW Skills & Language</h3>
+                        <p data-i18n="c_ssw_sub">জাপানে সরাসরি চাকরি</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_ssw_f1">স্কিল এক্সাম প্রিপারেশন</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_ssw_f2">জাপানিজ ইন্টারভিউ ট্রেনিং</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="c_ssw_f3">মেয়াদ: ৩ মাস</span></li>
+                        </ul>
+                        <div class="course-price">৳ ১৮,০০০</div>
+                        <a href="#apply" class="btn-lg btn-primary" style="text-align:center;" data-i18n="enroll_btn">ভর্তি হন</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1528164344705-47542687990d?q=80&w=1000&auto=format&fit=crop" alt="Classroom" class="rounded-2xl shadow-xl object-cover w-full h-[380px]">
-                    <div class="absolute -bottom-6 -right-6 bg-jpRed text-white p-5 rounded-2xl shadow-lg hidden sm:block max-w-[220px]">
-                        <p class="font-bold text-lg" data-i18n="aboutBadgeTitle">জাপানি কাঞ্জি ও কাইওয়া</p>
-                        <p class="text-xs text-jpLightSakura" data-i18n="aboutBadgeDesc">সহজ উপস্থাপনায় বিশেষ পদ্ধতিতে শিক্ষা দান।</p>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <div class="inline-block bg-jpLightSakura text-jpRed px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider" data-i18n="aboutTag">আমাদের কথা</div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slateDark" data-i18n="aboutHeading">সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টারে আপনাকে স্বাগতম</h2>
-                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base" data-i18n="aboutText1">
-                        আমরা নবাবগঞ্জে বিগত কয়েক বছর ধরে সততা ও দক্ষতার সাথে জাপানি ভাষা ও সংস্কৃতি শিক্ষা দিয়ে আসছি। আমাদের প্রধান লক্ষ্য হলো বাংলাদেশি তরুণদের জাপানে স্টুডেন্ট ভিসা ও SSW ওয়ার্ক ভিসার মাধ্যমে আত্মনির্ভরশীল করা।
-                    </p>
-                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base" data-i18n="aboutText2">
-                        আমাদের রয়েছে এয়ারকন্ডিশনড আধুনিক ক্লাসরুম, সমৃদ্ধ লাইব্রেরি এবং অডিও-ভিজ্যুয়াল কাইওয়া সেশন যা শিক্ষার্থীদের খুব দ্রুত জাপানি ভাষার সাথে খাপ খাইয়ে নিতে সাহায্য করে।
-                    </p>
-                    <div class="pt-2 grid grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-jpRed"></i> <span data-i18n="feat1">ন্যাটিভ জাপানিজ স্পিকার সেশন</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-jpRed"></i> <span data-i18n="feat2">ফ্রি স্টাডি ম্যাটেরিয়ালস</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-jpRed"></i> <span data-i18n="feat3">মক টেস্ট ব্যবস্থা</span></div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-jpRed"></i> <span data-i18n="feat4">জব ফেয়ার ও ইন্টারভিউ গাইড</span></div>
-                    </div>
-                </div>
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <div class="section-title">
+            <h2 data-i18n="quiz_title">আপনার ভাষা দক্ষতা যাচাই করুন</h2>
+            <div></div>
+        </div>
+        <div class="quiz-container">
+            <div id="quiz-step-1">
+                <h4 style="margin-bottom:15px;" data-i18n="quiz_q1">প্রশ্ন ১: জাপানি বর্ণমালার মূল প্রথম দুটি লিপি কী কী?</h4>
+                <div class="quiz-option" onclick="selectQuizOption(this)"><input type="radio" name="q1"> <span data-i18n="quiz_a1">কাঞ্জি ও রোমাজি</span></div>
+                <div class="quiz-option" onclick="selectQuizOption(this)"><input type="radio" name="q1"> <span data-i18n="quiz_a2">হিরাগানা ও কাতাকানা</span></div>
+                <button class="btn-lg btn-primary" style="width:100%; margin-top:15px;" onclick="nextQuizStep(2)" data-i18n="next">পরবর্তী</button>
+            </div>
+            <div id="quiz-step-2" style="display:none;">
+                <h4 style="margin-bottom:15px;" data-i18n="quiz_q2">প্রশ্ন ২: "Konnichiwa" (こんにちは) শব্দটির অর্থ কী?</h4>
+                <div class="quiz-option" onclick="selectQuizOption(this)"><input type="radio" name="q2"> <span data-i18n="quiz_a3">শুভ সকাল</span></div>
+                <div class="quiz-option" onclick="selectQuizOption(this)"><input type="radio" name="q2"> <span data-i18n="quiz_a4">হ্যালো / শুভ অপরাহ্ন</span></div>
+                <button class="btn-lg btn-primary" style="width:100%; margin-top:15px;" onclick="showQuizResult()" data-i18n="result">ফলাফল দেখুন</button>
+            </div>
+            <div id="quiz-result" style="display:none; text-align:center;">
+                <h3 style="color:var(--primary); margin-bottom:10px;">অভিনন্দন! 🎉</h3>
+                <p style="margin-bottom:15px;" data-i18n="quiz_res_text">আপনার জন্য উপযুক্ত কোর্স: <strong>JLPT N5 (Beginner)</strong></p>
+                <a href="#apply" class="btn-lg btn-primary" data-i18n="enroll_btn">ভর্তি হন</a>
             </div>
         </div>
     </section>
 
-    <!-- Services & Gallery Section (4 Visual Cards) -->
-    <section id="services" class="py-16 bg-slate-50 bg-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="bg-jpRed/10 text-jpRed text-xs font-bold px-3 py-1 rounded-full uppercase" data-i18n="srvSub">আমাদের মূল সুবিধাসমূহ</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slateDark mt-2" data-i18n="srvTitle">বিশেষায়িত সেবা ও কোর্সসমূহ</h2>
-                <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="srvDesc">আপনার প্রয়োজন অনুযায়ী সঠিক সেবাটি বেছে নিন এবং জাপানে নিজের ক্যারিয়ার সুনিশ্চিত করুন।</p>
+    <!-- Application Form Section -->
+    <section id="apply">
+        <div class="apply-section">
+            <div class="section-title" style="color:var(--white);">
+                <h2 style="color:var(--white);" data-i18n="apply_title">ভর্তির জন্য আবেদন করুন</h2>
+                <p style="opacity:0.8;" data-i18n="apply_subtitle">তথ্য লিখলে তা সরাসরি আমাদের এডমিন প্যানেলে জমা হবে</p>
+                <div style="background:var(--white);"></div>
+            </div>
+            <form class="apply-form" id="admissionForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" id="applicantName" placeholder="আপনার পূর্ণ নাম" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="applicantPhone" placeholder="মোবাইল নম্বর" required>
+                </div>
+                <div class="form-group">
+                    <select id="applicantCourse" required>
+                        <option value="" data-i18n="select_course">কোর্স নির্বাচন করুন</option>
+                        <option value="JLPT N5">JLPT N5 Course</option>
+                        <option value="JLPT N4">JLPT N4 Course</option>
+                        <option value="SSW Course">SSW Work Visa Course</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="applicantNotes" rows="3" placeholder="আপনার প্রশ্ন বা মন্তব্য (যদি থাকে)"></textarea>
+                </div>
+                <button type="submit" class="btn-lg btn-primary" style="width:100%; border:none; cursor:pointer;" data-i18n="submit_btn">আবেদন জমা দিন</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Admin Section (Only Viewable When Logged In) -->
+    <section id="admin-section-wrapper" style="display:none; background:#f8fafc;">
+        <div class="admin-dashboard">
+            <div class="admin-header">
+                <div>
+                    <h2><i class="fas fa-user-shield" style="color:var(--primary);"></i> <span data-i18n="admin_panel_title">এডমিন প্যানেল</span></h2>
+                    <p style="font-size:0.85rem; color:var(--text-muted);" data-i18n="admin_welcome">স্বাগতম এডমিন! এখান থেকে আবেদন ও লোগো পরিবর্তন পরিচালনা করুন।</p>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <button class="btn-lg btn-outline" style="color:var(--secondary); border-color:var(--secondary); padding:8px 15px; font-size:0.85rem;" onclick="openLogoModal()">
+                        <i class="fas fa-image"></i> <span data-i18n="btn_change_logo">লোগো পরিবর্তন</span>
+                    </button>
+                    <button class="btn-lg btn-primary" style="padding:8px 15px; font-size:0.85rem;" onclick="adminLogout()">
+                        <i class="fas fa-sign-out-alt"></i> <span data-i18n="btn_logout">লগআউট</span>
+                    </button>
+                </div>
             </div>
 
-            <!-- 4 Visual Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-slate-100 flex flex-col group">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=800&auto=format&fit=crop" alt="JLPT Training" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-jpRed text-white text-[11px] font-bold px-2.5 py-1 rounded-full" data-i18n="card1Badge">JLPT / NAT-TEST</span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-bold text-lg text-slateDark mb-2 group-hover:text-jpRed transition-colors" data-i18n="card1Title">JLPT/NAT ল্যাঙ্গুয়েজ ট্রেনিং</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="card1Desc">
-                                N5 থেকে N2 লেভেলের সম্পূর্ণ প্রস্তুতি। হিরাগানা, কাতাকানা, কাঞ্জি ও লিসেনিং এ দক্ষ করার নিবিড় কোর্স।
-                            </p>
-                        </div>
-                        <a href="#apply" class="mt-4 inline-flex items-center text-jpRed text-xs font-bold hover:underline gap-1" data-i18n="applyLink">
-                            আবেদন করুন <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- Table Controls -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap; gap:10px;">
+                <input type="text" id="adminSearchInput" placeholder="নাম বা ফোন দিয়ে খুঁজুন..." onkeyup="filterAdminTable()" style="padding:8px 12px; border-radius:6px; border:1px solid var(--border); font-size:0.85rem; width:220px;">
+                <button onclick="exportToCSV()" class="btn-lg" style="background:#10b981; color:white; padding:8px 15px; font-size:0.85rem;">
+                    <i class="fas fa-file-excel"></i> <span data-i18n="export_csv">CSV ড্যাটা ডাউনলোড</span>
+                </button>
+            </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-slate-100 flex flex-col group">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="SSW Job" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full" data-i18n="card2Badge">Specified Skilled Worker</span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-bold text-lg text-slateDark mb-2 group-hover:text-jpRed transition-colors" data-i18n="card2Title">SSW ওয়ার্ক ভিসা ও জব ম্যাচিং</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="card2Desc">
-                                কেয়ারগিভার, এগ্রিকালচার, ফুড সার্ভিস ইত্যাদি খাতে জেনুইন কাজের সুযোগ ও ইন্টারভিউ সাপোর্ট।
-                            </p>
-                        </div>
-                        <a href="#apply" class="mt-4 inline-flex items-center text-jpRed text-xs font-bold hover:underline gap-1" data-i18n="applyLink">
-                            আবেদন করুন <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-slate-100 flex flex-col group">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=800&auto=format&fit=crop" alt="Culture" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-amber-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full" data-i18n="card3Badge">Culture & Kaiwa</span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-bold text-lg text-slateDark mb-2 group-hover:text-jpRed transition-colors" data-i18n="card3Title">জাপানি সংস্কৃতি ও কাইওয়া ট্রেনিং</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="card3Desc">
-                                দৈনন্দিন জীবনের সাবলীল কথোপকথন (কাইওয়া), শিষ্টাচার ও কর্মক্ষেত্রের সঠিক সংস্কৃতির ব্যবহারিক পাঠ।
-                            </p>
-                        </div>
-                        <a href="#apply" class="mt-4 inline-flex items-center text-jpRed text-xs font-bold hover:underline gap-1" data-i18n="applyLink">
-                            আবেদন করুন <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-slate-100 flex flex-col group">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="Student Visa" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full" data-i18n="card4Badge">Student Visa</span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-bold text-lg text-slateDark mb-2 group-hover:text-jpRed transition-colors" data-i18n="card4Title">স্টুডেন্ট ভিসা ও ডকুমেন্টেশন</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="card4Desc">
-                                উচ্চশিক্ষার জন্য জাপানি কলেজ ও ইউনিভার্সিটিতে ভর্তির সুনির্দিষ্ট প্রসেসিং এবং ১০০% ফাইল প্রিপারেশন।
-                            </p>
-                        </div>
-                        <a href="#apply" class="mt-4 inline-flex items-center text-jpRed text-xs font-bold hover:underline gap-1" data-i18n="applyLink">
-                            আবেদন করুন <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- Applicants Table -->
+            <div class="admin-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th data-i18n="th_name">নাম</th>
+                            <th data-i18n="th_phone">ফোন নম্বর</th>
+                            <th data-i18n="th_course">কোর্স</th>
+                            <th data-i18n="th_date">তারিখ</th>
+                            <th data-i18n="th_status">স্ট্যাটাস</th>
+                            <th data-i18n="th_action">অ্যাকশন</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody">
+                        <!-- Dynamic Rows -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Interactive JLPT Level Tester Quiz -->
-    <section id="quiz" class="py-16 bg-slate-900 text-white relative">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-8">
-                <span class="bg-jpRed text-white text-xs font-bold px-3 py-1 rounded-full uppercase" data-i18n="quizSub">অনলাইন মূল্যায়ণ</span>
-                <h2 class="text-2xl sm:text-3xl font-bold mt-2" data-i18n="quizTitle">আপনার জন্য উপযুক্ত কোর্স কোনটি? (JLPT Quiz)</h2>
-                <p class="text-slate-400 text-xs sm:text-sm mt-1" data-i18n="quizDesc">মাত্র ৩টি প্রশ্নের উত্তর দিন এবং জানুন কোন লেভেল থেকে পড়াশোনা শুরু করা উচিত।</p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SUCCESS JAPANESE</h4>
+                <p style="color:#cbd5e1; font-size:0.85rem;" data-i18n="footer_about">আমরা জাপানি ভাষা শিক্ষা ও ক্যারিয়ার গড়ার বিশ্বস্ত প্রতিষ্ঠান।</p>
             </div>
-
-            <div class="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-2xl relative">
-                <div id="quizContainer">
-                    <div class="flex justify-between items-center mb-6 text-xs text-slate-400">
-                        <span id="quizProgressText">প্রশ্ন ১/৩</span>
-                        <div class="w-32 bg-slate-700 h-2 rounded-full overflow-hidden">
-                            <div id="quizProgressBar" class="bg-jpRed h-full w-1/3 transition-all duration-300"></div>
-                        </div>
-                    </div>
-
-                    <div id="quizQuestionBox" class="min-h-[160px]">
-                        <!-- Dynamic Question Loaded Here -->
-                    </div>
-
-                    <div class="mt-6 flex justify-between items-center pt-4 border-t border-slate-700">
-                        <button id="quizPrevBtn" onclick="prevQuizStep()" class="text-slate-400 hover:text-white text-xs font-semibold px-4 py-2 rounded-lg bg-slate-700/50 hidden" data-i18n="quizPrev">পূর্ববর্তী</button>
-                        <div></div>
-                    </div>
-                </div>
-
-                <div id="quizResultBox" class="hidden text-center py-6 space-y-4">
-                    <div class="w-16 h-16 bg-jpRed/20 text-jpRed rounded-full flex items-center justify-center mx-auto text-3xl">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-jpSakura" id="quizResultTitle">সুপারিশকৃত কোর্স</h3>
-                    <p class="text-slate-300 text-sm max-w-md mx-auto" id="quizResultText"></p>
-                    <div class="pt-2">
-                        <a href="#apply" onclick="selectCourseFromQuiz()" class="inline-block bg-jpRed hover:bg-jpDarkRed text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-md transition" data-i18n="quizApplyBtn">এই কোর্সে সরাসরি ভর্তি ফরম পূরণ করুন</a>
-                        <button onclick="resetQuiz()" class="block mx-auto mt-3 text-slate-400 hover:text-white text-xs underline" data-i18n="quizRetry">পুনরায় টেস্ট দিন</button>
-                    </div>
-                </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_links">কুইক লিঙ্ক</h4>
+                <ul>
+                    <li><a href="#home" data-i18n="nav_home">হোম</a></li>
+                    <li><a href="#services" data-i18n="nav_services">আমাদের সেবা</a></li>
+                    <li><a href="#courses" data-i18n="nav_courses">কোর্সসমূহ</a></li>
+                    <li><a href="#apply" data-i18n="nav_apply">ভর্তি হন</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_contact">যোগাযোগ</h4>
+                <p style="color:#cbd5e1; font-size:0.85rem;"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> <span data-i18n="address">ওহমা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা</span></p>
+                <p style="color:#cbd5e1; font-size:0.85rem; margin-top:5px;"><i class="fas fa-phone-alt" style="color:var(--primary);"></i> +880 1700-000000</p>
             </div>
         </div>
-    </section>
-
-    <!-- Admission Form Section -->
-    <section id="apply" class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-jpLightSakura/50 rounded-3xl p-6 sm:p-10 border border-jpSakura/30 shadow-sm">
-                <div class="text-center mb-8">
-                    <span class="bg-jpRed text-white text-xs font-bold px-3 py-1 rounded-full uppercase" data-i18n="applySub">ভর্তি ফরম</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slateDark mt-2" data-i18n="applyTitle">অনলাইন এডমিশন আবেদনপত্র</h2>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-1" data-i18n="applyDesc">নিচের তথ্যগুলো সঠিকভাব পূরণ করে আপনার আসন নিশ্চিত করুন। আমাদের প্রতিনিধি দ্রুত যোগাযোগ করবেন।</p>
-                </div>
-
-                <form id="admissionForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="formName">শিক্ষার্থীর সম্পূর্ণ নাম *</label>
-                            <input type="text" id="studentName" required placeholder="উদাহরণ: মোঃ রহিম শেখ" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-jpRed text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="formPhone">মোবাইল নম্বর *</label>
-                            <input type="tel" id="studentPhone" required placeholder="017XXXXXXXX" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-jpRed text-sm">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="formCourse">আকাঙ্ক্ষিত কোর্স বেছে নিন *</label>
-                            <select id="studentCourse" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-jpRed text-sm bg-white">
-                                <option value="JLPT N5 Beginner" data-i18n="c1">JLPT N5 (প্রাথমিক কোর্স)</option>
-                                <option value="JLPT N4 Intermediate" data-i18n="c2">JLPT N4 (মাধ্যমিক কোর্স)</option>
-                                <option value="SSW Work Visa Special" data-i18n="c3">SSW ওয়ার্ক ভিসা স্পেশাল</option>
-                                <option value="Student Visa Batch" data-i18n="c4">স্টুডেন্ট ভিসা ফুল প্রসেসিং</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="formExp">পূর্বে জাপানি ভাষার অভিজ্ঞতা</label>
-                            <select id="studentExp" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-jpRed text-sm bg-white">
-                                <option value="None" data-i18n="expNone">একদম নতুন (No Experience)</option>
-                                <option value="Basic Hiragana/Katakana" data-i18n="expBasic">হিরাগানা/কাতাকানা জানি</option>
-                                <option value="N5 Passed" data-i18n="expN5">N5 সম্পন্ন করেছি</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="formNote">যেকোনো বিশেষ প্রশ্ন বা বক্তব্য (ঐচ্ছিক)</label>
-                        <textarea id="studentNote" rows="3" placeholder="যেমন: ক্লাসের সময়সূচী বা ফি সংক্রান্ত প্রশ্ন..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-jpRed text-sm"></textarea>
-                    </div>
-
-                    <div class="text-center pt-2">
-                        <button type="submit" class="bg-jpRed hover:bg-jpDarkRed text-white px-8 py-3 rounded-xl font-bold text-sm shadow-md transition transform hover:scale-105" data-i18n="formSubmitBtn">
-                            <i class="fa-solid fa-paper-plane mr-2"></i> আবেদন জমা দিন
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials / Success Stories -->
-    <section class="py-16 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-jpRed text-xs font-bold uppercase" data-i18n="testiSub">সফল শিক্ষার্থীদের গল্প</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-slateDark mt-1" data-i18n="testiTitle">শিক্ষার্থীদের মতামত</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
-                    <div class="flex items-center gap-1 text-amber-400 text-xs">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-600 italic" data-i18n="testi1">"নবাবগঞ্জে এতো সুন্দর ও সুশৃঙ্খল জাপানি ভাষা শেখার প্রতিষ্ঠান সত্যিই প্রশংসনীয়। N5 এবং N4 একবারে পাস করেছি।"</p>
-                    <div class="pt-2 border-t border-slate-100 flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-jpRed/20 text-jpRed font-bold flex items-center justify-center text-xs">আর</div>
-                        <div>
-                            <h4 class="font-bold text-xs text-slateDark" data-i18n="testi1Name">মোঃ রাফসান আহমেদ</h4>
-                            <p class="text-[10px] text-slate-400" data-i18n="testi1Role">বর্তমানে টোকিওতে স্টুডেন্ট</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
-                    <div class="flex items-center gap-1 text-amber-400 text-xs">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-600 italic" data-i18n="testi2">"SSW ভিসার কেয়ারগিভার পরীক্ষার গাইডলাইন অসাধারণ ছিল। ইন্টারভিউ পার হওয়ার জন্য কাইওয়া ক্লাস খুব সাহায্য করেছে।"</p>
-                    <div class="pt-2 border-t border-slate-100 flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-jpRed/20 text-jpRed font-bold flex items-center justify-center text-xs">এস</div>
-                        <div>
-                            <h4 class="font-bold text-xs text-slateDark" data-i18n="testi2Name">সুমাইয়া আক্তার</h4>
-                            <p class="text-[10px] text-slate-400" data-i18n="testi2Role">SSW ভিসাধারী, ওসাকা</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
-                    <div class="flex items-center gap-1 text-amber-400 text-xs">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-600 italic" data-i18n="testi3">"শিক্ষকদের বোঝানোর স্টাইল একদম সহজ ও ফ্রেন্ডলি। যেকোনো প্রশ্নের উত্তর সহাস্যে বুঝিয়ে দিতেন।"</p>
-                    <div class="pt-2 border-t border-slate-100 flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-jpRed/20 text-jpRed font-bold flex items-center justify-center text-xs">টি</div>
-                        <div>
-                            <h4 class="font-bold text-xs text-slateDark" data-i18n="testi3Name">তানজিম হোসেন</h4>
-                            <p class="text-[10px] text-slate-400" data-i18n="testi3Role">N5 ব্যাচ শিক্ষার্থী</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location Footer -->
-    <footer id="contact" class="bg-slateDark text-white pt-12 pb-6 border-t-4 border-jpRed">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <!-- Col 1 -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3">
-                        <img id="footerLogo" src="https://images.unsplash.com/photo-1528164344705-47542687990d?q=80&w=200&auto=format&fit=crop" class="w-10 h-10 rounded-full border border-jpRed">
-                        <h3 class="font-bold text-base text-jpSakura" data-i18n="footerBrand">সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</h3>
-                    </div>
-                    <p class="text-slate-400 text-xs leading-relaxed" data-i18n="footerAbout">
-                        নবাবগঞ্জের শীর্ষস্থানীয় জাপানি ভাষা প্রশিক্ষণ কেন্দ্র। সততা ও নিখুঁত নির্দেশনার মাধ্যমে শিক্ষার্থীদের স্বপ্নপূরণে আমরা প্রতিশ্রুতিবদ্ধ।
-                    </p>
-                </div>
-
-                <!-- Col 2: Contact Info -->
-                <div class="space-y-2">
-                    <h4 class="font-bold text-sm text-white border-b border-slate-700 pb-2 inline-block" data-i18n="footerContactHeader">যোগাযোগ ঠিকানা</h4>
-                    <p class="text-xs text-slate-300 flex items-start gap-2">
-                        <i class="fa-solid fa-location-dot text-jpRed mt-1"></i>
-                        <span data-i18n="footerAddr">ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা, বাংলাদেশ</span>
-                    </p>
-                    <p class="text-xs text-slate-300 flex items-center gap-2">
-                        <i class="fa-solid fa-phone text-emerald-400"></i>
-                        <span>+8801796663354, +8801840000177</span>
-                    </p>
-                    <p class="text-xs text-slate-300 flex items-center gap-2">
-                        <i class="fa-solid fa-envelope text-sky-400"></i>
-                        <span>successjapanese52@gmail.com</span>
-                    </p>
-                </div>
-
-                <!-- Col 3: Hours & Social -->
-                <div class="space-y-3">
-                    <h4 class="font-bold text-sm text-white border-b border-slate-700 pb-2 inline-block" data-i18n="footerHoursHeader">অফিস সময়সূচী</h4>
-                    <p class="text-xs text-slate-300" data-i18n="footerHours">শনিবার - বৃহস্পতিবার: সকাল ১০:০০ - সন্ধ্যা ৬:০০<br>(শুক্রবার সাপ্তাহিক বন্ধ)</p>
-                    <div class="flex items-center gap-3 pt-1">
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-jpRed transition text-xs"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-jpRed transition text-xs"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-jpRed transition text-xs"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
-                <p>© <span id="year"></span> Success Japanese Language Center. All Rights Reserved.</p>
-            </div>
+        <div class="copyright">
+            <p>&copy; 2026 Success Japanese Language Center. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- ADMIN PANEL MODAL -->
-    <div id="adminModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-2 sm:p-4">
-        <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <!-- Admin Header -->
-            <div class="bg-slateDark text-white p-4 flex justify-between items-center border-b border-slate-700">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-user-shield text-jpRed text-xl"></i>
-                    <h3 class="font-bold text-base sm:text-lg" data-i18n="adminModalTitle">এডমিন প্যানেল - ভর্তি ফরম রেসপন্স</h3>
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <h3 style="margin-bottom:15px; color:var(--secondary); text-align:center;"><i class="fas fa-user-lock" style="color:var(--primary);"></i> <span data-i18n="login_title">এডমিন লগইন</span></h3>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="form-group" style="margin-bottom:12px;">
+                    <input type="text" id="adminUser" placeholder="ইউজারনেম (admin)" required>
                 </div>
-                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-xl p-1">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Admin Content -->
-            <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1">
-                <!-- Top Toolbar -->
-                <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                    <div class="flex items-center gap-2 flex-1">
-                        <i class="fa-solid fa-magnifying-glass text-slate-400 text-xs"></i>
-                        <input type="text" id="adminSearch" oninput="renderAdminTable()" placeholder="নাম বা মোবাইল দিয়ে খুঁজুন..." class="w-full text-xs bg-white px-3 py-1.5 rounded-lg border border-slate-300 focus:outline-none">
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <select id="adminStatusFilter" onchange="renderAdminTable()" class="text-xs bg-white px-3 py-1.5 rounded-lg border border-slate-300 focus:outline-none">
-                            <option value="ALL" data-i18n="filterAll">সকল স্ট্যাটাস</option>
-                            <option value="Pending" data-i18n="filterPending">Pending / পেন্ডিং</option>
-                            <option value="Contacted" data-i18n="filterContacted">Contacted / যোগাযোগকৃত</option>
-                            <option value="Enrolled" data-i18n="filterEnrolled">Enrolled / ভর্তি সম্পন্ন</option>
-                        </select>
-                        <button onclick="exportCSV()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-file-csv"></i> <span data-i18n="exportBtn">CSV এক্সপোর্ট</span>
-                        </button>
-                    </div>
+                <div class="form-group" style="margin-bottom:15px;">
+                    <input type="password" id="adminPass" placeholder="পাসওয়ার্ড (success123)" required>
                 </div>
-
-                <!-- Applications Table -->
-                <div class="overflow-x-auto border border-slate-200 rounded-xl shadow-sm">
-                    <table class="w-full text-left text-xs border-collapse">
-                        <thead class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider border-b border-slate-200">
-                            <tr>
-                                <th class="p-3">তারিখ</th>
-                                <th class="p-3">নাম</th>
-                                <th class="p-3">মোবাইল</th>
-                                <th class="p-3">কোর্স</th>
-                                <th class="p-3">অভিজ্ঞতা/প্রশ্ন</th>
-                                <th class="p-3">স্ট্যাটাস</th>
-                                <th class="p-3 text-right">অ্যাকশন</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminTableBody" class="divide-y divide-slate-200 bg-white">
-                            <!-- Dynamic Table Rows -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <div class="bg-slate-50 p-3 text-right border-t border-slate-200">
-                <button onclick="closeAdminModal()" class="bg-slate-600 hover:bg-slate-700 text-white px-4 py-1.5 rounded-lg text-xs font-bold" data-i18n="closeBtn">বন্ধ করুন</button>
-            </div>
+                <button type="submit" class="btn-lg btn-primary" style="width:100%; border:none;" data-i18n="login_btn">লগইন করুন</button>
+            </form>
         </div>
     </div>
 
-    <!-- LOGO UPDATE MODAL -->
-    <div id="logoModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-2xl p-6 shadow-2xl border border-slate-200 space-y-4">
-            <div class="flex justify-between items-center border-b pb-2">
-                <h3 class="font-bold text-base text-slateDark" data-i18n="logoModalTitle">লোগো পরিবর্তন করুন</h3>
-                <button onclick="closeLogoModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+    <!-- Logo Update Modal -->
+    <div class="modal-overlay" id="logoModal">
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeModal('logoModal')">&times;</span>
+            <h3 style="margin-bottom:15px; color:var(--secondary);"><i class="fas fa-image" style="color:var(--primary);"></i> <span data-i18n="logo_modal_title">লোগো পরিবর্তন করুন</span></h3>
+            <div class="form-group" style="margin-bottom:12px;">
+                <label style="font-size:0.8rem; color:var(--text-muted);">ইমেজ URL লিংক দিন:</label>
+                <input type="url" id="logoUrlInput" placeholder="https://example.com/logo.png">
             </div>
-            
-            <p class="text-xs text-slate-500" data-i18n="logoModalDesc">লোগো পরিবর্তনের জন্য নতুন ছবির URL লিংক দিন অথবা ফাইল আপলোড করুন:</p>
-
-            <div class="space-y-3">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="logoUrlLabel">Image URL (লিঙ্ক):</label>
-                    <input type="url" id="logoUrlInput" placeholder="https://example.com/logo.jpg" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
-                </div>
-                <div class="text-center text-xs text-slate-400" data-i18n="or">-- অথবা --</div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="logoFileLabel">কম্পিউটার/মোবাইল থেকে ছবি সিলেক্ট করুন:</label>
-                    <input type="file" id="logoFileInput" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-jpLightSakura file:text-jpRed hover:file:bg-jpSakura">
-                </div>
+            <div style="text-align:center; margin:10px 0; font-size:0.8rem; color:var(--text-muted);">অথবা পিসি থেকে ফাইল সিলেক্ট করুন</div>
+            <div class="form-group" style="margin-bottom:15px;">
+                <input type="file" id="logoFileInput" accept="image/*">
             </div>
-
-            <div class="flex justify-end gap-2 pt-2">
-                <button onclick="closeLogoModal()" class="px-4 py-1.5 bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg" data-i18n="cancelBtn">বাতিল</button>
-                <button onclick="saveNewLogo()" class="px-4 py-1.5 bg-jpRed text-white text-xs font-bold rounded-lg hover:bg-jpDarkRed" data-i18n="saveBtn">সংরক্ষণ করুন</button>
-            </div>
+            <button class="btn-lg btn-primary" style="width:100%; border:none;" onclick="saveLogoChange()" data-i18n="save_btn">সংরক্ষণ করুন</button>
         </div>
     </div>
 
-    <!-- Toast Notification Box -->
-    <div id="toast" class="fixed bottom-5 right-5 bg-slate-800 text-white px-4 py-3 rounded-xl shadow-xl hidden z-50 flex items-center gap-3 border border-slate-700">
-        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-        <span id="toastMsg" class="text-xs font-medium"></span>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JavaScript Logic -->
     <script>
-        // Default Applications Data
-        const initialApplications = [
-            {
-                id: 'APP-101',
-                name: 'মোঃ তানভীর হাসান',
-                phone: '01711223344',
-                course: 'JLPT N5 Beginner',
-                exp: 'None',
-                note: 'সকাল ৯টার ব্যাচে ক্লাস করতে ইচ্ছুক।',
-                status: 'Pending',
-                date: '2026-10-25 10:30'
+        // Language Translations
+        const i18n = {
+            bn: {
+                address: "ওহমা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা",
+                nav_home: "হোম",
+                nav_services: "আমাদের সেবা",
+                nav_courses: "কোর্সসমূহ",
+                nav_quiz: "লেভেল টেস্ট",
+                nav_apply: "ভর্তি হন",
+                nav_admin: "এডমিন লগইন",
+                hero_badge: "🇯🇵 জাপানে উচ্চশিক্ষা ও ক্যারিয়ারের বিশ্বস্ত প্রতিষ্ঠান",
+                hero_title: "সহজ উপায়ে জাপানি ভাষা শিখুন,\nজাপানে সফল ক্যারিয়ার গড়ুন",
+                hero_desc: "JLPT, NAT-TEST এবং SSW পরীক্ষার জন্য অভিজ্ঞ ও নেটিভ ট্রেইনার দ্বারা পরিচালিত স্পেশাল কোর্স।",
+                hero_btn_courses: "কোর্সসমূহ দেখুন",
+                hero_btn_apply: "অনলাইন ভর্তি",
+                stat_pass: "JLPT পাসের হার",
+                stat_students: "সফল শিক্ষার্থী",
+                stat_visa: "জাপান ভিসা গাইডেন্স",
+                stat_teachers: "অভিজ্ঞ শিক্ষক",
+                services_title: "আমাদের সেবাসমূহ",
+                srv_1_title: "JLPT / NAT পরীক্ষা প্রস্তুতি",
+                srv_1_desc: "N5 এবং N4 লেভেলের জন্য মানসম্মত অডিও-ভিজ্যুয়াল ক্লাস এবং মক টেস্ট সাপোর্ট।",
+                srv_2_title: "SSW ওয়ার্ক ভিসা ট্রেনিং",
+                srv_2_desc: "স্পেসিফাইড স্কিল্ড ওয়ার্কারদের জন্য স্কিল এক্সাম প্রিপারেশন এবং জব ইন্টারভিউ গাইডেন্স।",
+                srv_3_title: "জাপানি স্পোকেন (Kaiwa)",
+                srv_3_desc: "দৈনন্দিন কথাবলা এবং নেটিভ স্টাইলে স্পষ্ট উচ্চারণ শেখার বিশেষ কাইওয়া সেশন।",
+                srv_4_title: "স্টুডেন্ট ও ভিসা প্রসেসিং",
+                srv_4_desc: "জাপানে উচ্চশিক্ষা ও স্টুডেন্ট ভিসার সঠিক ফাইল প্রসেসিং এবং ডকুমেন্টেশন সহায়তা।",
+                courses_title: "আমাদের কোর্সসমূহ",
+                c_n5_sub: "শুরু করার প্রথম ধাপ",
+                c_n5_f1: "হিরাগানা, কাতাকানা ও কাঞ্জি",
+                c_n5_f2: "৮০০+ শব্দভাণ্ডার (Vocabulary)",
+                c_n5_f3: "মেয়াদ: ৪ মাস",
+                c_n4_sub: "উচ্চশিক্ষা ও চাকরির প্রস্তুতি",
+                c_n4_f1: "অ্যাডভান্স গ্রামার ও কাঞ্জি",
+                c_n4_f2: "১৫০০+ শব্দভাণ্ডার",
+                c_n4_f3: "মেয়াদ: ৪ মাস",
+                c_ssw_sub: "জাপানে সরাসরি চাকরি",
+                c_ssw_f1: "স্কিল এক্সাম প্রিপারেশন",
+                c_ssw_f2: "জাপানিজ ইন্টারভিউ ট্রেনিং",
+                c_ssw_f3: "মেয়াদ: ৩ মাস",
+                enroll_btn: "ভর্তি হন",
+                quiz_title: "আপনার ভাষা দক্ষতা যাচাই করুন",
+                quiz_q1: "প্রশ্ন ১: জাপানি বর্ণমালার মূল প্রথম দুটি লিপি কী কী?",
+                quiz_a1: "কাঞ্জি ও রোমাজি",
+                quiz_a2: "হিরাগানা ও কাতাকানা",
+                quiz_q2: "প্রশ্ন ২: \"Konnichiwa\" (こんにちは) শব্দটির অর্থ কী?",
+                quiz_a3: "শুভ সকাল",
+                quiz_a4: "হ্যালো / শুভ অপরাহ্ন",
+                next: "পরবর্তী",
+                result: "ফলাফল দেখুন",
+                quiz_res_text: "আপনার জন্য উপযুক্ত কোর্স: JLPT N5 (Beginner)",
+                apply_title: "ভর্তির জন্য আবেদন করুন",
+                apply_subtitle: "তথ্য লিখলে তা সরাসরি আমাদের এডমিন প্যানেলে জমা হবে",
+                select_course: "কোর্স নির্বাচন করুন",
+                submit_btn: "আবেদন জমা দিন",
+                admin_panel_title: "এডমিন প্যানেল",
+                admin_welcome: "স্বাগতম এডমিন! এখান থেকে আবেদন ও লোগো পরিবর্তন পরিচালনা করুন।",
+                btn_change_logo: "লোগো পরিবর্তন",
+                btn_logout: "লগআউট",
+                export_csv: "CSV ড্যাটা ডাউনলোড",
+                th_name: "নাম",
+                th_phone: "ফোন নম্বর",
+                th_course: "কোর্স",
+                th_date: "তারিখ",
+                th_status: "স্ট্যাটাস",
+                th_action: "অ্যাকশন",
+                footer_about: "আমরা জাপানি ভাষা শিক্ষা ও ক্যারিয়ার গড়ার বিশ্বস্ত প্রতিষ্ঠান।",
+                footer_links: "কুইক লিঙ্ক",
+                footer_contact: "যোগাযোগ",
+                login_title: "এডমিন লগইন",
+                login_btn: "লগইন করুন",
+                logo_modal_title: "লোগো পরিবর্তন করুন",
+                save_btn: "সংরক্ষণ করুন"
             },
-            {
-                id: 'APP-102',
-                name: 'নাসরিন সুলতানা',
-                phone: '01899887766',
-                course: 'SSW Work Visa Special',
-                exp: 'Basic Hiragana/Katakana',
-                note: 'কেয়ারগিভার সেক্টরে ভিসা প্রসেস করতে চাই।',
-                status: 'Contacted',
-                date: '2026-10-26 14:15'
+            en: {
+                address: "Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka",
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_courses: "Courses",
+                nav_quiz: "Level Quiz",
+                nav_apply: "Apply Now",
+                nav_admin: "Admin Login",
+                hero_badge: "🇯🇵 Trusted Center for Japan Higher Education & Career",
+                hero_title: "Learn Japanese Language Easily,\nBuild a Successful Career in Japan",
+                hero_desc: "Specialized preparation courses for JLPT, NAT-TEST, and SSW with experienced native trainers.",
+                hero_btn_courses: "Explore Courses",
+                hero_btn_apply: "Online Admission",
+                stat_pass: "JLPT Pass Rate",
+                stat_students: "Successful Students",
+                stat_visa: "Visa Guidance",
+                stat_teachers: "Expert Trainers",
+                services_title: "Our Services",
+                srv_1_title: "JLPT / NAT Test Prep",
+                srv_1_desc: "Comprehensive audio-visual classes and mock test support for N5 and N4 levels.",
+                srv_2_title: "SSW Work Visa Training",
+                srv_2_desc: "Skill exam preparation and job interview coaching for Specified Skilled Workers.",
+                srv_3_title: "Japanese Spoken (Kaiwa)",
+                srv_3_desc: "Daily conversational sessions to master natural Japanese accent and pronunciation.",
+                srv_4_title: "Student Visa Guidance",
+                srv_4_desc: "End-to-end file processing and documentation assistance for studying in Japan.",
+                courses_title: "Popular Courses",
+                c_n5_sub: "Beginner Level Step 1",
+                c_n5_f1: "Hiragana, Katakana & Kanji",
+                c_n5_f2: "800+ Vocabulary List",
+                c_n5_f3: "Duration: 4 Months",
+                c_n4_sub: "Intermediate Level Step 2",
+                c_n4_f1: "Advanced Grammar & Kanji",
+                c_n4_f2: "1500+ Vocabulary List",
+                c_n4_f3: "Duration: 4 Months",
+                c_ssw_sub: "Direct Job in Japan",
+                c_ssw_f1: "Skill Exam Preparation",
+                c_ssw_f2: "Japanese Interview Training",
+                c_ssw_f3: "Duration: 3 Months",
+                enroll_btn: "Enroll Now",
+                quiz_title: "Check Your Language Level",
+                quiz_q1: "Q1: What are the primary two Japanese scripts?",
+                quiz_a1: "Kanji & Romaji",
+                quiz_a2: "Hiragana & Katakana",
+                quiz_q2: "Q2: What does \"Konnichiwa\" (こんにちは) mean?",
+                quiz_a3: "Good Morning",
+                quiz_a4: "Hello / Good Afternoon",
+                next: "Next",
+                result: "Show Result",
+                quiz_res_text: "Recommended Level: JLPT N5 (Beginner)",
+                apply_title: "Apply For Admission",
+                apply_subtitle: "Your information will automatically sync to our Admin Panel",
+                select_course: "Select Course",
+                submit_btn: "Submit Application",
+                admin_panel_title: "Admin Dashboard",
+                admin_welcome: "Welcome Admin! Manage applications and site branding from here.",
+                btn_change_logo: "Change Logo",
+                btn_logout: "Logout",
+                export_csv: "Export CSV Data",
+                th_name: "Name",
+                th_phone: "Phone",
+                th_course: "Course",
+                th_date: "Date",
+                th_status: "Status",
+                th_action: "Action",
+                footer_about: "We are a premier institute for Japanese language learning and careers.",
+                footer_links: "Quick Links",
+                footer_contact: "Contact Info",
+                login_title: "Admin Login",
+                login_btn: "Login",
+                logo_modal_title: "Update Center Logo",
+                save_btn: "Save Logo"
             }
-        ];
-
-        // State Management
-        let currentLang = 'bn'; // 'bn' or 'en'
-        let applications = JSON.parse(localStorage.getItem('sjlc_apps')) || initialApplications;
-        let logoSrc = localStorage.getItem('sjlc_logo') || 'https://images.unsplash.com/photo-1528164344705-47542687990d?q=80&w=200&auto=format&fit=crop';
-        let currentQuizIndex = 0;
-
-        // Quiz Questions Data
-        const quizQuestions = [
-            {
-                qBn: 'আপনি কি জাপানি ভাষার হিরাগানা ও কাতাকানা বর্ণমালা পড়তে পারেন?',
-                qEn: 'Can you read Japanese Hiragana and Katakana alphabets?',
-                options: [
-                    { labelBn: 'না, একদম নতুন শিখতে চাই', labelEn: 'No, I am a total beginner', level: 'N5' },
-                    { labelBn: 'হ্যাঁ, পড়তে ও লিখতে পারি', labelEn: 'Yes, I can read and write them', level: 'N4' }
-                ]
-            },
-            {
-                qBn: 'জাপানে আপনার মূল লক্ষ্য কী?',
-                qEn: 'What is your main goal in Japan?',
-                options: [
-                    { labelBn: 'উচ্চশিক্ষা ও বিশ্ববিদ্যালয়ে পড়াশোনা (Student Visa)', labelEn: 'Higher education (Student Visa)', level: 'N5' },
-                    { labelBn: 'সরাসরি চাকরি / কেয়ারগিভার / এগ্রিকালচার (SSW Visa)', labelEn: 'Direct Specified Skilled Work (SSW)', level: 'SSW' }
-                ]
-            },
-            {
-                qBn: 'আপনার জাপানি কাঞ্জি (Kanji) সংক্রান্ত অভিজ্ঞতা কেমন?',
-                qEn: 'What is your level of experience with Kanji?',
-                options: [
-                    { labelBn: 'কোনো ধারণা নেই', labelEn: 'No idea', level: 'N5' },
-                    { labelBn: '৫০-১০০টি সাধারণ কাঞ্জি জানি', labelEn: 'Know around 50-100 basic Kanji', level: 'N4' }
-                ]
-            }
-        ];
-        let quizAnswers = [];
-
-        // Dictionary for Translations
-        const translations = {
-            topAddress: { bn: 'ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা', en: 'Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka' },
-            tagline: { bn: 'জাপানে আপনার স্বপ্নের ক্যারিয়ার গড়ার বিশ্বস্ত সঙ্গী', en: 'Your Trusted Partner for Building a Career in Japan' },
-            brandTitle: { bn: 'সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার', en: 'Success Japanese Language Center' },
-            subTitle: { bn: 'SUCCESS JAPANESE LANGUAGE CENTER', en: 'SUCCESS JAPANESE LANGUAGE CENTER' },
-            navHome: { bn: 'হোম', en: 'Home' },
-            navAbout: { bn: 'আমাদের সম্পর্কে', en: 'About Us' },
-            navServices: { bn: 'সেবাসমূহ', en: 'Services' },
-            navCourses: { bn: 'কোর্সসমূহ', en: 'Courses' },
-            navQuiz: { bn: 'লেভেল টেস্ট', en: 'Level Test' },
-            navApply: { bn: 'ভর্তি আবেদন', en: 'Apply Now' },
-            navContact: { bn: 'যোগাযোগ', en: 'Contact' },
-            navAdmin: { bn: 'এডমিন', en: 'Admin' },
-            heroBadge: { bn: '🌸 জাপানি ভাষা ও স্টুডেন্ট/ওয়ার্ক ভিসা সেন্টার', en: '🌸 Japanese Language & Visa Support Center' },
-            heroTitle: { bn: 'সহজ উপায়ে জাপানি ভাষা শিখুন, জাপানে উজ্জ্বল ভবিষ্যৎ গড়ে তুলুন', en: 'Learn Japanese Easily, Build a Bright Future in Japan' },
-            heroDesc: { bn: 'নবাবগঞ্জের অভিজ্ঞ ও সার্টিফাইড শিক্ষকদের পরিচর্যায় JLPT, NAT ও SSW পরীক্ষার সর্বোচ্চ মানের প্রস্তুতি গ্রহণ করুন। সরাসরি জাপানিজ সংস্কৃতির অভিজ্ঞতা লাভ করুন।', en: 'Prepare for JLPT, NAT & SSW exams with certified teachers in Nawabganj. Experience authentic Japanese language & culture.' },
-            heroBtn1: { bn: 'এখনই ভর্তি হন', en: 'Enroll Now' },
-            heroBtn2: { bn: 'ফ্রি লেভেল টেস্ট', en: 'Free Level Test' },
-            heroCardTitle: { bn: 'কেন আমাদের বেছে নেবেন?', en: 'Why Choose Us?' },
-            stat1: { bn: 'পাস রেট (JLPT/NAT)', en: 'Pass Rate (JLPT/NAT)' },
-            stat2: { bn: 'ভিসা গাইডেন্স', en: 'Visa Guidance' },
-            stat3: { bn: 'সফল শিক্ষার্থী', en: 'Successful Students' },
-            stat4: { bn: 'অভিজ্ঞ ইনস্ট্রাক্টর', en: 'Expert Instructors' },
-            aboutTag: { bn: 'আমাদের কথা', en: 'ABOUT US' },
-            aboutHeading: { bn: 'সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টারে আপনাকে স্বাগতম', en: 'Welcome to Success Japanese Language Center' },
-            aboutText1: { bn: 'আমরা নবাবগঞ্জে বিগত কয়েক বছর ধরে সততা ও দক্ষতার সাথে জাপানি ভাষা ও সংস্কৃতি শিক্ষা দিয়ে আসছি। আমাদের প্রধান লক্ষ্য হলো বাংলাদেশি তরুণদের জাপানে স্টুডেন্ট ভিসা ও SSW ওয়ার্ক ভিসার মাধ্যমে আত্মনির্ভরশীল করা।', en: 'We have been offering top-notch Japanese language and cultural education in Nawabganj with integrity and expertise. Our core mission is empowering Bangladeshi youth through student and SSW work visas.' },
-            aboutText2: { bn: 'আমাদের রয়েছে এয়ারকন্ডিশনড আধুনিক ক্লাসরুম, সমৃদ্ধ লাইব্রেরি এবং অডিও-ভিজ্যুয়াল কাইওয়া সেশন যা শিক্ষার্থীদের খুব দ্রুত জাপানি ভাষার সাথে খাপ খাইয়ে নিতে সাহায্য করে।', en: 'We offer air-conditioned modern classrooms, a rich library, and audio-visual Kaiwa sessions to help students master the language rapidly.' },
-            aboutBadgeTitle: { bn: 'জাপানি কাঞ্জি ও কাইওয়া', en: 'Kanji & Kaiwa Focus' },
-            aboutBadgeDesc: { bn: 'সহজ উপস্থাপনায় বিশেষ পদ্ধতিতে শিক্ষা দান।', en: 'Special teaching methods with simple interactive delivery.' },
-            feat1: { bn: 'ন্যাটিভ জাপানিজ স্পিকার সেশন', en: 'Native Speaker Sessions' },
-            feat2: { bn: 'ফ্রি স্টাডি ম্যাটেরিয়ালস', en: 'Free Study Materials' },
-            feat3: { bn: 'মক টেস্ট ব্যবস্থা', en: 'Regular Mock Tests' },
-            feat4: { bn: 'জব ফেয়ার ও ইন্টারভিউ গাইড', en: 'Job Fair & Interview Prep' },
-            srvSub: { bn: 'আমাদের মূল সুবিধাসমূহ', en: 'OUR KEY SERVICES' },
-            srvTitle: { bn: 'বিশেষায়িত সেবা ও কোর্সসমূহ', en: 'Specialized Courses & Services' },
-            srvDesc: { bn: 'আপনার প্রয়োজন অনুযায়ী সঠিক সেবাটি বেছে নিন এবং জাপানে নিজের ক্যারিয়ার সুনিশ্চিত করুন।', en: 'Choose the suitable pathway based on your goal and secure your future in Japan.' },
-            card1Badge: { bn: 'JLPT / NAT-TEST', en: 'JLPT / NAT-TEST' },
-            card1Title: { bn: 'JLPT/NAT ল্যাঙ্গুয়েজ ট্রেনিং', en: 'JLPT/NAT Language Training' },
-            card1Desc: { bn: 'N5 থেকে N2 লেভেলের সম্পূর্ণ প্রস্তুতি। হিরাগানা, কাতাকানা, কাঞ্জি ও লিসেনিং এ দক্ষ করার নিবিড় কোর্স।', en: 'Comprehensive training for N5 to N2 levels. Intensive modules in Hiragana, Katakana, Kanji & Listening.' },
-            card2Badge: { bn: 'Specified Skilled Worker', en: 'Specified Skilled Worker' },
-            card2Title: { bn: 'SSW ওয়ার্ক ভিসা ও জব ম্যাচিং', en: 'SSW Work Visa & Job Matching' },
-            card2Desc: { bn: 'কেয়ারগিভার, এগ্রিকালচার, ফুড সার্ভিস ইত্যাদি খাতে জেনুইন কাজের সুযোগ ও ইন্টারভিউ সাপোর্ট।', en: 'Genuine job placement & interview preparation for Caregiver, Agriculture, Food Services, etc.' },
-            card3Badge: { bn: 'Culture & Kaiwa', en: 'Culture & Kaiwa' },
-            card3Title: { bn: 'জাপানি সংস্কৃতি ও কাইওয়া ট্রেনিং', en: 'Japanese Culture & Kaiwa Training' },
-            card3Desc: { bn: 'দৈনন্দিন জীবনের সাবলীল কথোপকথন (কাইওয়া), শিষ্টাচার ও কর্মক্ষেত্রের সঠিক সংস্কৃতির ব্যবহারিক পাঠ।', en: 'Practical sessions in conversational fluency (Kaiwa), Japanese workplace manners & etiquette.' },
-            card4Badge: { bn: 'Student Visa', en: 'Student Visa' },
-            card4Title: { bn: 'স্টুডেন্ট ভিসা ও ডকুমেন্টেশন', en: 'Student Visa & Documentation' },
-            card4Desc: { bn: 'উচ্চশিক্ষার জন্য জাপানি কলেজ ও ইউনিভার্সিটিতে ভর্তির সুনির্দিষ্ট প্রসেসিং এবং ১০০% ফাইল প্রিপারেশন।', en: 'End-to-end guidance for Japanese language schools/universities with 100% accurate file preparation.' },
-            applyLink: { bn: 'আবেদন করুন', en: 'Apply Now' },
-            quizSub: { bn: 'অনলাইন মূল্যায়ণ', en: 'ONLINE EVALUATION' },
-            quizTitle: { bn: 'আপনার জন্য উপযুক্ত কোর্স কোনটি? (JLPT Quiz)', en: 'Which Course Fits You Best? (JLPT Quiz)' },
-            quizDesc: { bn: 'মাত্র ৩টি প্রশ্নের উত্তর দিন এবং জানুন কোন লেভেল থেকে পড়াশোনা শুরু করা উচিত।', en: 'Answer 3 quick questions to discover your recommended starting level.' },
-            quizPrev: { bn: 'পূর্ববর্তী', en: 'Previous' },
-            quizApplyBtn: { bn: 'এই কোর্সে সরাসরি ভর্তি ফরম পূরণ করুন', en: 'Apply Directly for Recommended Course' },
-            quizRetry: { bn: 'পুনরায় টেস্ট দিন', en: 'Retake Test' },
-            applySub: { bn: 'ভর্তি ফরম', en: 'ADMISSION FORM' },
-            applyTitle: { bn: 'অনলাইন এডমিশন আবেদনপত্র', en: 'Online Admission Application' },
-            applyDesc: { bn: 'নিচের তথ্যগুলো সঠিকভাব পূরণ করে আপনার আসন নিশ্চিত করুন। আমাদের প্রতিনিধি দ্রুত যোগাযোগ করবেন।', en: 'Fill out your details below to reserve your seat. Our official will reach out shortly.' },
-            formName: { bn: 'শিক্ষার্থীর সম্পূর্ণ নাম *', en: 'Student Full Name *' },
-            formPhone: { bn: 'মোবাইল নম্বর *', en: 'Mobile Phone Number *' },
-            formCourse: { bn: 'আকাঙ্ক্ষিত কোর্স বেছে নিন *', en: 'Select Desired Course *' },
-            c1: { bn: 'JLPT N5 (প্রাথমিক কোর্স)', en: 'JLPT N5 (Beginner Course)' },
-            c2: { bn: 'JLPT N4 (মাধ্যমিক কোর্স)', en: 'JLPT N4 (Intermediate Course)' },
-            c3: { bn: 'SSW ওয়ার্ক ভিসা স্পেশাল', en: 'SSW Work Visa Special Batch' },
-            c4: { bn: 'স্টুডেন্ট ভিসা ফুল প্রসেসিং', en: 'Student Visa Full Processing' },
-            formExp: { bn: 'পূর্বে জাপানি ভাষার অভিজ্ঞতা', en: 'Prior Japanese Language Knowledge' },
-            expNone: { bn: 'একদম নতুন (No Experience)', en: 'Total Beginner (No Experience)' },
-            expBasic: { bn: 'হিরাগানা/কাতাকানা জানি', en: 'Know Hiragana / Katakana' },
-            expN5: { bn: 'N5 সম্পন্ন করেছি', en: 'Completed N5 Level' },
-            formNote: { bn: 'যেকোনো বিশেষ প্রশ্ন বা বক্তব্য (ঐচ্ছিক)', en: 'Any specific question/note (Optional)' },
-            formSubmitBtn: { bn: 'আবেদন জমা দিন', en: 'Submit Application' },
-            testiSub: { bn: 'সফল শিক্ষার্থীদের গল্প', en: 'SUCCESS STORIES' },
-            testiTitle: { bn: 'শিক্ষার্থীদের মতামত', en: 'Student Testimonials' },
-            testi1: { bn: '"নবাবগঞ্জে এতো সুন্দর ও সুশৃঙ্খল জাপানি ভাষা শেখার প্রতিষ্ঠান সত্যিই প্রশংসনীয়। N5 এবং N4 একবারে পাস করেছি।"', en: '"A truly disciplined and high-quality institute in Nawabganj. I passed N5 and N4 on my first attempt!"' },
-            testi1Name: { bn: 'মোঃ রাফসান আহমেদ', en: 'Md. Rafsan Ahmed' },
-            testi1Role: { bn: 'বর্তমানে টোকিওতে স্টুডেন্ট', en: 'Currently Student in Tokyo' },
-            testi2: { bn: '"SSW ভিসার কেয়ারগিভার পরীক্ষার গাইডলাইন অসাধারণ ছিল। ইন্টারভিউ পার হওয়ার জন্য কাইওয়া ক্লাস খুব সাহায্য করেছে।"', en: '"The SSW Caregiver test guidance was excellent. The Kaiwa practice gave me immense confidence in interviews."' },
-            testi2Name: { bn: 'সুমাইয়া আক্তার', en: 'Sumaiya Akter' },
-            testi2Role: { bn: 'SSW ভিসাধারী, ওসাকা', en: 'SSW Visa Holder, Osaka' },
-            testi3: { bn: '"শিক্ষকদের বোঝানোর স্টাইল একদম সহজ ও ফ্রেন্ডলি। যেকোনো প্রশ্নের উত্তর সহাস্যে বুঝিয়ে দিতেন।"', en: '"The teaching style is super friendly and interactive. Every query was explained patiently."' },
-            testi3Name: { bn: 'তানজিম হোসেন', en: 'Tanjim Hossain' },
-            testi3Role: { bn: 'N5 ব্যাচ শিক্ষার্থী', en: 'N5 Batch Student' },
-            footerBrand: { bn: 'সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার', en: 'Success Japanese Language Center' },
-            footerAbout: { bn: 'নবাবগঞ্জের শীর্ষস্থানীয় জাপানি ভাষা প্রশিক্ষণ কেন্দ্র। সততা ও নিখুঁত নির্দেশনার মাধ্যমে শিক্ষার্থীদের স্বপ্নপূরণে আমরা প্রতিশ্রুতিবদ্ধ।', en: 'Leading Japanese language institute in Nawabganj. Committed to realizing student dreams through excellence.' },
-            footerContactHeader: { bn: 'যোগাযোগ ঠিকানা', en: 'Contact Details' },
-            footerAddr: { bn: 'ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা, বাংলাদেশ', en: 'Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka, Bangladesh' },
-            footerHoursHeader: { bn: 'অফিস সময়সূচী', en: 'Office Hours' },
-            footerHours: { bn: 'শনিবার - বৃহস্পতিবার: সকাল ৯:০০ - সন্ধ্যা ৬:০০\n(শুক্রবার সাপ্তাহিক বন্ধ)', en: 'Saturday - Thursday: 9:00 AM - 6:00 PM\n(Friday Closed)' },
-            adminModalTitle: { bn: 'এডমিন প্যানেল - ভর্তি ফরম রেসপন্স', en: 'Admin Panel - Admission Responses' },
-            filterAll: { bn: 'সকল স্ট্যাটাস', en: 'All Status' },
-            filterPending: { bn: 'Pending / পেন্ডিং', en: 'Pending' },
-            filterContacted: { bn: 'Contacted / যোগাযোগকৃত', en: 'Contacted' },
-            filterEnrolled: { bn: 'Enrolled / ভর্তি সম্পন্ন', en: 'Enrolled' },
-            exportBtn: { bn: 'CSV এক্সপোর্ট', en: 'Export CSV' },
-            closeBtn: { bn: 'বন্ধ করুন', en: 'Close' },
-            logoModalTitle: { bn: 'লোগো পরিবর্তন করুন', en: 'Change Center Logo' },
-            logoModalDesc: { bn: 'লোগো পরিবর্তনের জন্য নতুন ছবির URL লিংক দিন অথবা ফাইল আপলোড করুন:', en: 'Enter new image URL or upload file from your device:' },
-            logoUrlLabel: { bn: 'Image URL (লিঙ্ক):', en: 'Image URL:' },
-            logoFileLabel: { bn: 'কম্পিউটার/মোবাইল থেকে ছবি সিলেক্ট করুন:', en: 'Select file from computer/device:' },
-            or: { bn: '-- অথবা --', en: '-- OR --' },
-            cancelBtn: { bn: 'বাতিল', en: 'Cancel' },
-            saveBtn: { bn: 'সংরক্ষণ করুন', en: 'Save Logo' }
         };
 
-        // Initialize Page
-        window.onload = function() {
-            document.getElementById('year').innerText = new Date().getFullYear();
-            updateLogos();
-            updateBadgeCounters();
-            renderQuizStep();
-            updateLanguageUI();
-        };
+        let currentLang = 'bn';
+        let isAdminLoggedIn = false;
 
-        // Language Switcher Logic
+        // Sample Storage Initializer
+        let applicants = JSON.parse(localStorage.getItem('sjl_applicants')) || [
+            { id: 1, name: "তানভীর আহমেদ", phone: "01711223344", course: "JLPT N5", date: "2026-10-25", status: "Pending" },
+            { id: 2, name: "মো: রফিকুল ইসলাম", phone: "01812345678", course: "SSW Course", date: "2026-10-26", status: "Contacted" }
+        ];
+
+        // Language Switcher
         function toggleLanguage() {
             currentLang = currentLang === 'bn' ? 'en' : 'bn';
-            document.body.className = currentLang === 'bn' ? 'text-slate-800 font-bn antialiased flex flex-col min-h-screen' : 'text-slate-800 font-en antialiased flex flex-col min-h-screen';
-            document.getElementById('langText').innerText = currentLang === 'bn' ? 'English' : 'বাংলা';
-            updateLanguageUI();
-            renderQuizStep();
-            if(!document.getElementById('adminModal').classList.contains('hidden')) {
-                renderAdminTable();
-            }
-        }
-
-        function updateLanguageUI() {
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(el => {
+            document.getElementById('lang-btn-text').innerText = currentLang === 'bn' ? 'English' : 'বাংলা';
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[key] && translations[key][currentLang]) {
-                    el.innerText = translations[key][currentLang];
+                if (i18n[currentLang][key]) {
+                    el.innerText = i18n[currentLang][key];
                 }
             });
         }
 
-        // Mobile Navigation Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+        // Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Logo Modal & Storage Logic
-        function openLogoModal() {
-            document.getElementById('logoModal').classList.remove('hidden');
-        }
-
-        function closeLogoModal() {
-            document.getElementById('logoModal').classList.add('hidden');
-        }
-
-        function updateLogos() {
-            document.getElementById('mainLogo').src = logoSrc;
-            document.getElementById('footerLogo').src = logoSrc;
-        }
-
-        function saveNewLogo() {
-            const urlInput = document.getElementById('logoUrlInput').value.trim();
-            const fileInput = document.getElementById('logoFileInput');
-
-            if (urlInput !== '') {
-                logoSrc = urlInput;
-                localStorage.setItem('sjlc_logo', logoSrc);
-                updateLogos();
-                closeLogoModal();
-                showToast(currentLang === 'bn' ? 'লোগো সফলভাবে আপডেট করা হয়েছে!' : 'Logo updated successfully!');
-            } else if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    logoSrc = e.target.result;
-                    localStorage.setItem('sjlc_logo', logoSrc);
-                    updateLogos();
-                    closeLogoModal();
-                    showToast(currentLang === 'bn' ? 'লোগো সফলভাবে আপডেট করা হয়েছে!' : 'Logo updated successfully!');
-                };
-                reader.readAsDataURL(fileInput.files[0]);
+        // Admin Auth Flow
+        function handleAdminNavClick() {
+            if (isAdminLoggedIn) {
+                document.getElementById('admin-section-wrapper').scrollIntoView({ behavior: 'smooth' });
             } else {
-                showToast(currentLang === 'bn' ? 'অনুগ্রহ করে ছবি নির্বাচন বা URL টাইপ করুন' : 'Please provide a URL or select an image file', true);
+                document.getElementById('loginModal').style.display = 'flex';
             }
         }
 
-        // Form Submission Logic
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+
+            if (user === 'admin' && pass === 'success123') {
+                isAdminLoggedIn = true;
+                closeModal('loginModal');
+                document.getElementById('admin-section-wrapper').style.display = 'block';
+                document.getElementById('admin-btn-label').innerText = 'Dashboard';
+                renderAdminTable();
+                document.getElementById('admin-section-wrapper').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                alert('ভুল ইউজারনেম বা পাসওয়ার্ড!');
+            }
+        }
+
+        function adminLogout() {
+            isAdminLoggedIn = false;
+            document.getElementById('admin-section-wrapper').style.display = 'none';
+            document.getElementById('admin-btn-label').innerText = i18n[currentLang].nav_admin;
+            alert('সফলভাবে লগআউট হয়েছে।');
+        }
+
+        // Application Form Handler
         function handleFormSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('studentName').value.trim();
-            const phone = document.getElementById('studentPhone').value.trim();
-            const course = document.getElementById('studentCourse').value;
-            const exp = document.getElementById('studentExp').value;
-            const note = document.getElementById('studentNote').value.trim();
+            const name = document.getElementById('applicantName').value;
+            const phone = document.getElementById('applicantPhone').value;
+            const course = document.getElementById('applicantCourse').value;
 
-            const newApp = {
-                id: 'APP-' + Math.floor(100 + Math.random() * 900),
+            const newApplicant = {
+                id: Date.now(),
                 name,
                 phone,
                 course,
-                exp,
-                note: note || '-',
-                status: 'Pending',
-                date: new Date().toISOString().replace('T', ' ').substring(0, 16)
+                date: new Date().toISOString().split('T')[0],
+                status: "Pending"
             };
 
-            applications.unshift(newApp);
-            localStorage.setItem('sjlc_apps', JSON.stringify(applications));
+            applicants.unshift(newApplicant);
+            localStorage.setItem('sjl_applicants', JSON.stringify(applicants));
 
-            // Reset Form
+            alert('আপনার ভর্তি আবেদন সফলভাবে জমা হয়েছে! আমাদের প্রতিনিধি দ্রুত যোগাযোগ করবে।');
             document.getElementById('admissionForm').reset();
-            updateBadgeCounters();
 
-            showToast(currentLang === 'bn' ? 'আপনার ভর্তি ফরম সফলভাবে জমা হয়েছে! আমরা শীঘ্রই যোগাযোগ করব।' : 'Application submitted successfully! We will contact you soon.');
-        }
-
-        function updateBadgeCounters() {
-            const pendingCount = applications.filter(a => a.status === 'Pending').length;
-            const b1 = document.getElementById('pendingBadge');
-            const b2 = document.getElementById('pendingBadgeMobile');
-
-            if (pendingCount > 0) {
-                b1.innerText = pendingCount;
-                b1.classList.remove('hidden');
-                b2.innerText = pendingCount;
-                b2.classList.remove('hidden');
-            } else {
-                b1.classList.add('hidden');
-                b2.classList.add('hidden');
+            if (isAdminLoggedIn) {
+                renderAdminTable();
             }
         }
 
-        // Interactive Quiz Logic
-        function renderQuizStep() {
-            const q = quizQuestions[currentQuizIndex];
-            const isBn = currentLang === 'bn';
-            document.getElementById('quizProgressText').innerText = isBn ? `প্রশ্ন ${currentQuizIndex + 1}/${quizQuestions.length}` : `Question ${currentQuizIndex + 1}/${quizQuestions.length}`;
-            document.getElementById('quizProgressBar').style.width = `${((currentQuizIndex + 1) / quizQuestions.length) * 100}%`;
-
-            let optionsHtml = '';
-            q.options.forEach((opt, idx) => {
-                const label = isBn ? opt.labelBn : opt.labelEn;
-                optionsHtml += `
-                    <button onclick="answerQuiz('${opt.level}')" class="w-full text-left p-4 rounded-xl bg-slate-700/60 hover:bg-jpRed/80 hover:border-jpRed border border-slate-600 transition duration-200 flex items-center gap-3 text-xs sm:text-sm">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold border border-slate-500">${idx + 1}</span>
-                        <span>${label}</span>
-                    </button>
-                `;
-            });
-
-            document.getElementById('quizQuestionBox').innerHTML = `
-                <h4 class="text-base sm:text-lg font-bold mb-4">${isBn ? q.qBn : q.qEn}</h4>
-                <div class="space-y-3">${optionsHtml}</div>
-            `;
-
-            const prevBtn = document.getElementById('quizPrevBtn');
-            if (currentQuizIndex > 0) {
-                prevBtn.classList.remove('hidden');
-            } else {
-                prevBtn.classList.add('hidden');
-            }
-        }
-
-        function answerQuiz(level) {
-            quizAnswers.push(level);
-            if (currentQuizIndex < quizQuestions.length - 1) {
-                currentQuizIndex++;
-                renderQuizStep();
-            } else {
-                calculateQuizResult();
-            }
-        }
-
-        function prevQuizStep() {
-            if (currentQuizIndex > 0) {
-                currentQuizIndex--;
-                quizAnswers.pop();
-                renderQuizStep();
-            }
-        }
-
-        function calculateQuizResult() {
-            document.getElementById('quizContainer').classList.add('hidden');
-            document.getElementById('quizResultBox').classList.remove('hidden');
-
-            const isBn = currentLang === 'bn';
-            let recommended = 'JLPT N5 Beginner';
-            let title = isBn ? 'আপনার জন্য সুপারিশকৃত: JLPT N5 বেসিক কোর্স' : 'Recommended: JLPT N5 Beginner Course';
-            let desc = isBn ? 'যেহেতু আপনি নতুনভাবে শুরু করছেন, N5 কোর্স দিয়ে ভিত্তি মজবুত করা আপনার জন্য সবচেয়ে ফলপ্রসূ হবে।' : 'Since you are starting fresh, building a solid foundation with JLPT N5 is ideal for you.';
-
-            if (quizAnswers.includes('SSW')) {
-                recommended = 'SSW Work Visa Special';
-                title = isBn ? 'আপনার জন্য সুপারিশকৃত: SSW স্কিলড ওয়ার্কার কোর্স' : 'Recommended: SSW Work Visa Special Course';
-                desc = isBn ? 'সরাসরি জাপানে চাকরিপ্রার্থীদের জন্য ভাষা শিক্ষা ও জব ইন্টারভিউ বিশেষ ট্রেনিং দেওয়া হবে।' : 'Specially designed for job seekers targeting direct entry through Specified Skilled Worker visas.';
-            } else if (quizAnswers.filter(a => a === 'N4').length >= 2) {
-                recommended = 'JLPT N4 Intermediate';
-                title = isBn ? 'আপনার জন্য সুপারিশকৃত: JLPT N4 ইন্টারমিডিয়েট কোর্স' : 'Recommended: JLPT N4 Intermediate Course';
-                desc = isBn ? 'যেহেতু বেসিক জাপানি বর্ণমালায় দক্ষতা রয়েছে, আপনি সরাসরি N4 ক্লাসে যোগ দিতে পারেন।' : 'With your basic knowledge, you are well suited to begin directly with JLPT N4.';
-            }
-
-            document.getElementById('quizResultTitle').innerText = title;
-            document.getElementById('quizResultText').innerText = desc;
-            document.getElementById('quizResultBox').dataset.recommendedCourse = recommended;
-        }
-
-        function resetQuiz() {
-            currentQuizIndex = 0;
-            quizAnswers = [];
-            document.getElementById('quizResultBox').classList.add('hidden');
-            document.getElementById('quizContainer').classList.remove('hidden');
-            renderQuizStep();
-        }
-
-        function selectCourseFromQuiz() {
-            const courseVal = document.getElementById('quizResultBox').dataset.recommendedCourse;
-            if (courseVal) {
-                document.getElementById('studentCourse').value = courseVal;
-            }
-        }
-
-        // Admin Panel Functions
-        function openAdminModal() {
-            renderAdminTable();
-            document.getElementById('adminModal').classList.remove('hidden');
-        }
-
-        function closeAdminModal() {
-            document.getElementById('adminModal').classList.add('hidden');
-        }
-
+        // Admin Table Rendering
         function renderAdminTable() {
             const tbody = document.getElementById('adminTableBody');
-            const search = document.getElementById('adminSearch').value.toLowerCase();
-            const statusFilter = document.getElementById('adminStatusFilter').value;
-            const isBn = currentLang === 'bn';
-
             tbody.innerHTML = '';
 
-            const filtered = applications.filter(app => {
-                const matchesSearch = app.name.toLowerCase().includes(search) || app.phone.includes(search);
-                const matchesStatus = statusFilter === 'ALL' || app.status === statusFilter;
-                return matchesSearch && matchesStatus;
-            });
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-400 text-xs">${isBn ? 'কোনো আবেদন পাওয়া যায়নি।' : 'No records found.'}</td></tr>`;
-                return;
-            }
-
-            filtered.forEach(app => {
-                let badgeClass = 'bg-amber-100 text-amber-800 border-amber-300';
-                if (app.status === 'Contacted') badgeClass = 'bg-blue-100 text-blue-800 border-blue-300';
-                if (app.status === 'Enrolled') badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
-
-                const row = document.createElement('tr');
-                row.className = 'hover:bg-slate-50 transition border-b border-slate-100';
-                row.innerHTML = `
-                    <td class="p-3 text-slate-500 font-mono text-[11px] whitespace-nowrap">${app.date}</td>
-                    <td class="p-3 font-bold text-slate-800">${app.name}</td>
-                    <td class="p-3 text-slate-600 font-medium">${app.phone}</td>
-                    <td class="p-3 font-semibold text-jpRed">${app.course}</td>
-                    <td class="p-3 text-slate-500 text-[11px] max-w-xs truncate">${app.note}</td>
-                    <td class="p-3">
-                        <select onchange="updateAppStatus('${app.id}', this.value)" class="text-[11px] px-2 py-1 rounded-md border font-semibold ${badgeClass}">
-                            <option value="Pending" ${app.status === 'Pending' ? 'selected' : ''}>Pending</option>
-                            <option value="Contacted" ${app.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
-                            <option value="Enrolled" ${app.status === 'Enrolled' ? 'selected' : ''}>Enrolled</option>
-                        </select>
+            applicants.forEach((app, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td><strong>${app.name}</strong></td>
+                    <td>${app.phone}</td>
+                    <td>${app.course}</td>
+                    <td>${app.date}</td>
+                    <td>
+                        <span class="badge ${app.status === 'Pending' ? 'badge-pending' : (app.status === 'Contacted' ? 'badge-contacted' : 'badge-enrolled')}">
+                            ${app.status}
+                        </span>
                     </td>
-                    <td class="p-3 text-right">
-                        <button onclick="deleteApp('${app.id}')" class="text-rose-600 hover:text-rose-800 p-1 rounded transition" title="Delete">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
+                    <td>
+                        <button class="btn-action" onclick="toggleStatus(${app.id})" title="স্ট্যাটাস পরিবর্তন"><i class="fas fa-sync-alt"></i></button>
+                        <button class="btn-action" onclick="deleteApplicant(${app.id})" title="মুছে ফেলুন" style="color:#ef4444;"><i class="fas fa-trash"></i></button>
                     </td>
                 `;
-                tbody.appendChild(row);
+                tbody.appendChild(tr);
             });
         }
 
-        function updateAppStatus(id, newStatus) {
-            const index = applications.findIndex(a => a.id === id);
-            if (index !== -1) {
-                applications[index].status = newStatus;
-                localStorage.setItem('sjlc_apps', JSON.stringify(applications));
-                updateBadgeCounters();
-                renderAdminTable();
-                showToast(currentLang === 'bn' ? 'স্ট্যাটাস আপডেট করা হয়েছে!' : 'Status updated!');
-            }
-        }
-
-        function deleteApp(id) {
-            if (confirm(currentLang === 'bn' ? 'আপনি কি নিশ্চিতভাবে এই রেকর্ডটি মুছে ফেলতে চান?' : 'Are you sure you want to delete this record?')) {
-                applications = applications.filter(a => a.id !== id);
-                localStorage.setItem('sjlc_apps', JSON.stringify(applications));
-                updateBadgeCounters();
-                renderAdminTable();
-                showToast(currentLang === 'bn' ? 'রেকর্ডটি মুছে ফেলা হয়েছে!' : 'Record deleted!');
-            }
-        }
-
-        function exportCSV() {
-            if (applications.length === 0) {
-                showToast(currentLang === 'bn' ? 'এক্সপোর্ট করার জন্য কোনো ডাটা নেই' : 'No data available to export', true);
-                return;
-            }
-
-            let csvContent = 'data:text/csv;charset=utf-8,';
-            csvContent += 'Date,Name,Phone,Course,Experience,Note,Status\n';
-
-            applications.forEach(app => {
-                const row = [
-                    `"${app.date}"`,
-                    `"${app.name}"`,
-                    `"${app.phone}"`,
-                    `"${app.course}"`,
-                    `"${app.exp}"`,
-                    `"${app.note.replace(/"/g, '""')}"`,
-                    `"${app.status}"`
-                ].join(',');
-                csvContent += row + '\n';
+        function toggleStatus(id) {
+            applicants = applicants.map(app => {
+                if (app.id === id) {
+                    const next = app.status === 'Pending' ? 'Contacted' : (app.status === 'Contacted' ? 'Enrolled' : 'Pending');
+                    return { ...app, status: next };
+                }
+                return app;
             });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement('a');
-            link.setAttribute('href', encodedUri);
-            link.setAttribute('download', `Success_Japanese_Applications_${new Date().toISOString().slice(0,10)}.csv`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            localStorage.setItem('sjl_applicants', JSON.stringify(applicants));
+            renderAdminTable();
         }
 
-        // Toast Helper
-        function showToast(msg, isError = false) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toastMsg');
-            const toastIcon = document.getElementById('toastIcon');
-
-            toastMsg.innerText = msg;
-            if (isError) {
-                toastIcon.className = 'fa-solid fa-circle-exclamation text-rose-400 text-lg';
-            } else {
-                toastIcon.className = 'fa-solid fa-circle-check text-emerald-400 text-lg';
+        function deleteApplicant(id) {
+            if (confirm('আপনি কি এই আবেদনটি মুছে ফেলতে চান?')) {
+                applicants = applicants.filter(app => app.id !== id);
+                localStorage.setItem('sjl_applicants', JSON.stringify(applicants));
+                renderAdminTable();
             }
-
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3000);
         }
+
+        function filterAdminTable() {
+            const query = document.getElementById('adminSearchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#adminTableBody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        function exportToCSV() {
+            let csv = 'ID,Name,Phone,Course,Date,Status\n';
+            applicants.forEach(a => {
+                csv += `"${a.id}","${a.name}","${a.phone}","${a.course}","${a.date}","${a.status}"\n`;
+            });
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'Success_Japanese_Applicants.csv');
+            a.click();
+        }
+
+        // Logo Modal & Storage
+        function openLogoModal() {
+            document.getElementById('logoModal').style.display = 'flex';
+        }
+
+        function saveLogoChange() {
+            const urlInput = document.getElementById('logoUrlInput').value;
+            const fileInput = document.getElementById('logoFileInput').files[0];
+
+            if (fileInput) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    updateLogoSrc(e.target.result);
+                };
+                reader.readAsDataURL(fileInput);
+            } else if (urlInput) {
+                updateLogoSrc(urlInput);
+            }
+            closeModal('logoModal');
+        }
+
+        function updateLogoSrc(src) {
+            localStorage.setItem('sjl_logo', src);
+            document.getElementById('logo-container').innerHTML = `<img src="${src}" class="logo-img-preview" alt="Logo">`;
+        }
+
+        function loadSavedLogo() {
+            const savedLogo = localStorage.getItem('sjl_logo');
+            if (savedLogo) {
+                document.getElementById('logo-container').innerHTML = `<img src="${savedLogo}" class="logo-img-preview" alt="Logo">`;
+            }
+        }
+
+        // Quiz Actions
+        function selectQuizOption(el) {
+            const radio = el.querySelector('input[type="radio"]');
+            if(radio) radio.checked = true;
+        }
+
+        function nextQuizStep(step) {
+            document.getElementById('quiz-step-1').style.display = 'none';
+            document.getElementById('quiz-step-2').style.display = 'block';
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-step-2').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Init
+        window.onload = function() {
+            loadSavedLogo();
+        };
     </script>
 </body>
 </html>
