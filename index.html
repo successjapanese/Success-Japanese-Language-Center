@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Japanese Language Center | সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</title>
+    <title>সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -67,7 +67,7 @@
     <div class="bg-slateDark text-slate-200 text-xs sm:text-sm py-2 px-4 shadow-inner border-b border-slate-700">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-jpRed"></i> <span data-i18n="topAddress">ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা</span></span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-jpRed"></i> <span data-i18n="topAddress">ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা</span></span>
                 <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-emerald-400"></i> <a href="tel:+8801796663354, +8801840000177" class="hover:underline">+8801796663354, +8801840000177</a></span>
                 <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-jpSakura"></i> successjapanese52@gmail.com</span>
             </div>
@@ -90,13 +90,12 @@
                 <div class="flex items-center gap-3">
                     <div id="brandLogoContainer" class="relative group cursor-pointer" onclick="handleLogoClick()">
                         <img id="mainLogo" src="https://images.unsplash.com/photo-1528164344705-47542687990d?q=80&w=200&auto=format&fit=crop" alt="Logo" class="w-12 h-12 rounded-full object-cover border-2 border-jpRed shadow-sm">
-                        <div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                             <i class="fa-solid fa-camera text-white text-xs"></i>
                         </div>
                     </div>
                     <div>
                         <a href="#" class="font-bold text-xl sm:text-2xl text-slateDark leading-tight block" data-i18n="brandTitle">সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার</a>
-                        <span class="text-xs text-jpRed font-medium tracking-wider block" data-i18n="subTitle">SUCCESS JAPANESE LANGUAGE CENTER</span>
                     </div>
                 </div>
 
@@ -173,7 +172,7 @@
                 </h3>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-jpSakura">৯৫%+</p>
+                        <p class="text-2xl font-black text-jpSakura">৯৮%+</p>
                         <p class="text-xs text-slate-300" data-i18n="stat1">পাস রেট (JLPT/NAT)</p>
                     </div>
                     <div class="p-3 bg-slate-900/40 rounded-xl text-center">
@@ -181,11 +180,11 @@
                         <p class="text-xs text-slate-300" data-i18n="stat2">ভিসা গাইডেন্স</p>
                     </div>
                     <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-amber-300">৫০০+</p>
+                        <p class="text-2xl font-black text-amber-300">২০০+</p>
                         <p class="text-xs text-slate-300" data-i18n="stat3">সফল শিক্ষার্থী</p>
                     </div>
                     <div class="p-3 bg-slate-900/40 rounded-xl text-center">
-                        <p class="text-2xl font-black text-sky-300">১০+</p>
+                        <p class="text-2xl font-black text-sky-300">৫+</p>
                         <p class="text-xs text-slate-300" data-i18n="stat4">অভিজ্ঞ ইনস্ট্রাক্টর</p>
                     </div>
                 </div>
@@ -312,6 +311,14 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Admin-managed image gallery -->
+    <section id="adminGallerySection" class="py-14 bg-white hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8"><h2 class="text-2xl sm:text-3xl font-extrabold text-slateDark mt-2">আমাদের নতুন ছবি</h2><p class="text-slate-600 text-sm mt-2">এডমিন প্যানেল থেকে যুক্ত করা ছবি</p></div>
+        <div id="adminGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+      </div>
     </section>
 
     <!-- Interactive JLPT Level Tester Quiz -->
@@ -488,7 +495,7 @@
                     <h4 class="font-bold text-sm text-white border-b border-slate-700 pb-2 inline-block" data-i18n="footerContactHeader">যোগাযোগ ঠিকানা</h4>
                     <p class="text-xs text-slate-300 flex items-start gap-2">
                         <i class="fa-solid fa-location-dot text-jpRed mt-1"></i>
-                        <span data-i18n="footerAddr">ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা, বাংলাদেশ</span>
+                        <span data-i18n="footerAddr">ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা, বাংলাদেশ</span>
                     </p>
                     <p class="text-xs text-slate-300 flex items-center gap-2">
                         <i class="fa-solid fa-phone text-emerald-400"></i>
@@ -533,11 +540,11 @@
             <form onsubmit="handleAdminLogin(event)" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">এডমিন আইডি (Admin ID):</label>
-                    <input type="text" id="adminUser" required placeholder="admin" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
+                    <input type="text" id="adminUser" required placeholder="" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">পাসওয়ার্ড (Password):</label>
-                    <input type="password" id="adminPass" required placeholder="12345" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
+                    <input type="password" id="adminPass" required placeholder="" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
                 </div>
                 <div class="flex justify-end gap-2 pt-2">
                     <button type="button" onclick="closeAdminLoginModal()" class="px-4 py-1.5 bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg">বাতিল</button>
@@ -618,12 +625,21 @@
     <div id="logoModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white w-full max-w-md rounded-2xl p-6 shadow-2xl border border-slate-200 space-y-4">
             <div class="flex justify-between items-center border-b pb-2">
-                <h3 class="font-bold text-base text-slateDark" data-i18n="logoModalTitle">লোগো পরিবর্তন করুন</h3>
+                <h3 class="font-bold text-base text-slateDark">ওয়েবসাইটের ছবি যোগ / পরিবর্তন</h3>
                 <button onclick="closeLogoModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             
-            <p class="text-xs text-slate-500" data-i18n="logoModalDesc">লোগো পরিবর্তনের জন্য নতুন ছবির URL লিংক দিন অথবা ফাইল আপলোড করুন:</p>
+            <p class="text-xs text-slate-500">যে ছবিটি পরিবর্তন করতে চান সেটি বেছে নিয়ে URL দিন অথবা কম্পিউটার/মোবাইল থেকে ছবি আপলোড করুন।</p>
+            <div><label class="block text-xs font-bold text-slate-700 mb-1">ছবির স্থান নির্বাচন করুন:</label>
+            <select id="imageTargetSelect" onchange="toggleGalleryTitle()" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
+              <option value="logo">লোগো (উপরের ও নিচের)</option><option value="hero">হোম পেজের বড় ব্যাকগ্রাউন্ড</option><option value="about">আমাদের সম্পর্কে ছবি</option>
+              <option value="newGallery">নতুন ছবি যোগ করুন (গ্যালারি)</option><option value="service1">JLPT/NAT কোর্সের ছবি</option><option value="service2">SSW জবের ছবি</option><option value="service3">জাপানি সংস্কৃতির ছবি</option><option value="service4">স্টুডেন্ট ভিসার ছবি</option>
+            </select></div>
 
+            <div id="galleryTitleWrap" class="hidden">
+                <label class="block text-xs font-bold text-slate-700 mb-1">ছবির শিরোনাম (ঐচ্ছিক):</label>
+                <input type="text" id="galleryTitleInput" maxlength="100" placeholder="যেমন: আমাদের ক্লাসরুম" class="w-full text-xs px-3 py-2 border rounded-lg focus:ring-1 focus:ring-jpRed">
+            </div>
             <div class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1" data-i18n="logoUrlLabel">Image URL (লিঙ্ক):</label>
@@ -679,6 +695,8 @@
         let currentLang = 'bn'; // 'bn' or 'en'
         let applications = JSON.parse(localStorage.getItem('sjlc_apps')) || initialApplications;
         let logoSrc = localStorage.getItem('sjlc_logo') || 'https://images.unsplash.com/photo-1528164344705-47542687990d?q=80&w=200&auto=format&fit=crop';
+        let siteImages = {};
+        try { siteImages = JSON.parse(localStorage.getItem('sjlc_images') || '{}'); } catch (_) { siteImages = {}; }
         let currentQuizIndex = 0;
         let isAdminLoggedIn = sessionStorage.getItem('sjlc_admin_auth') === 'true';
         let pendingAction = null; // 'admin' or 'logo'
@@ -714,7 +732,7 @@
 
         // Dictionary for Translations
         const translations = {
-            topAddress: { bn: 'ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা', en: 'Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka' },
+            topAddress: { bn: 'ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা', en: 'Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka' },
             tagline: { bn: 'জাপানে আপনার স্বপ্নের ক্যারিয়ার গড়ার বিশ্বস্ত সঙ্গী', en: 'Your Trusted Partner for Building a Career in Japan' },
             brandTitle: { bn: 'সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার', en: 'Success Japanese Language Center' },
             subTitle: { bn: 'SUCCESS JAPANESE LANGUAGE CENTER', en: 'SUCCESS JAPANESE LANGUAGE CENTER' },
@@ -798,9 +816,9 @@
             footerBrand: { bn: 'সাকসেস জাপানিজ ল্যাঙ্গুয়েজ সেন্টার', en: 'Success Japanese Language Center' },
             footerAbout: { bn: 'নবাবগঞ্জের শীর্ষস্থানীয় জাপানি ভাষা প্রশিক্ষণ কেন্দ্র। সততা ও নিখুঁত নির্দেশনার মাধ্যমে শিক্ষার্থীদের স্বপ্নপূরণে আমরা প্রতিশ্রুতিবদ্ধ।', en: 'Leading Japanese language institute in Nawabganj. Committed to realizing student dreams through excellence.' },
             footerContactHeader: { bn: 'যোগাযোগ ঠিকানা', en: 'Contact Details' },
-            footerAddr: { bn: 'ওহামা কমপ্লেক্স, পূর্ব শামশাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা, বাংলাদেশ', en: 'Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka, Bangladesh' },
+            footerAddr: { bn: 'ওহামা কমপ্লেক্স, পূর্ব সমসাবাদ, নবাবগঞ্জ-১৩২০, ঢাকা, বাংলাদেশ', en: 'Ohama Complex, East Shamshabad, Nawabganj-1320, Dhaka, Bangladesh' },
             footerHoursHeader: { bn: 'অফিস সময়সূচী', en: 'Office Hours' },
-            footerHours: { bn: 'শনিবার - বৃহস্পতিবার: সকাল ৯:০০ - সন্ধ্যা ৬:০০\n(শুক্রবার সাপ্তাহিক বন্ধ)', en: 'Saturday - Thursday: 9:00 AM - 6:00 PM\n(Friday Closed)' },
+            footerHours: { bn: 'শনিবার - বৃহস্পতিবার: সকাল ১০:০০ - সন্ধ্যা ৬:০০\n(শুক্রবার সাপ্তাহিক বন্ধ)', en: 'Saturday - Thursday: 10:00 AM - 6:00 PM\n(Friday Closed)' },
             adminModalTitle: { bn: 'এডমিন প্যানেল - ভর্তি ফরম রেসপন্স', en: 'Admin Panel - Admission Responses' },
             filterAll: { bn: 'সকল স্ট্যাটাস', en: 'All Status' },
             filterPending: { bn: 'Pending / পেন্ডিং', en: 'Pending' },
@@ -889,6 +907,7 @@
                 sessionStorage.setItem('sjlc_admin_auth', 'true');
                 closeAdminLoginModal();
                 showToast(currentLang === 'bn' ? 'সফলভাবে এডমিন লগইন হয়েছে!' : 'Admin login successful!');
+                renderAdminGallery();
 
                 // Clear login inputs
                 document.getElementById('adminUser').value = '';
@@ -910,11 +929,17 @@
             isAdminLoggedIn = false;
             sessionStorage.removeItem('sjlc_admin_auth');
             closeAdminModal();
+            renderAdminGallery();
             showToast(currentLang === 'bn' ? 'এডমিন লগআউট সফল হয়েছে।' : 'Admin logged out successfully.');
         }
 
         // Logo Modal & Storage Logic
         function openLogoModal() {
+            document.getElementById('logoUrlInput').value = '';
+            document.getElementById('logoFileInput').value = '';
+            document.getElementById('imageTargetSelect').value = 'logo';
+            document.getElementById('galleryTitleInput').value = '';
+            toggleGalleryTitle();
             document.getElementById('logoModal').classList.remove('hidden');
         }
 
@@ -922,33 +947,106 @@
             document.getElementById('logoModal').classList.add('hidden');
         }
 
+        function toggleGalleryTitle() {
+            document.getElementById('galleryTitleWrap').classList.toggle('hidden',
+                document.getElementById('imageTargetSelect').value !== 'newGallery');
+        }
+
+        function renderAdminGallery() {
+            const section = document.getElementById('adminGallerySection');
+            const grid = document.getElementById('adminGalleryGrid');
+            const items = Array.isArray(siteImages.gallery) ? siteImages.gallery : [];
+            section.classList.toggle('hidden', items.length === 0);
+            grid.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm';
+                const img = document.createElement('img');
+                img.src = item.src; img.alt = item.title || 'Gallery image';
+                img.className = 'w-full h-52 object-cover'; img.loading = 'lazy';
+                const title = document.createElement('div');
+                title.className = 'p-3 text-sm font-semibold text-slateDark';
+                title.textContent = item.title || 'আমাদের ছবি';
+                card.append(img, title);
+                if (isAdminLoggedIn) {
+                    const del = document.createElement('button');
+                    del.type = 'button'; del.className = 'mx-3 mb-3 px-3 py-1.5 rounded-lg bg-rose-600 text-white text-xs';
+                    del.textContent = 'ছবি মুছুন'; del.onclick = () => deleteGalleryImage(item.id);
+                    card.appendChild(del);
+                }
+                grid.appendChild(card);
+            });
+        }
+
+        function deleteGalleryImage(id) {
+            if (!isAdminLoggedIn) return;
+            const old = siteImages.gallery || [];
+            siteImages.gallery = old.filter(item => item.id !== id);
+            try {
+                localStorage.setItem('sjlc_images', JSON.stringify(siteImages));
+                renderAdminGallery(); showToast('ছবিটি মুছে ফেলা হয়েছে।');
+            } catch (err) {
+                siteImages.gallery = old; showToast('পরিবর্তন সংরক্ষণ করা যায়নি।', true);
+            }
+        }
+
         function updateLogos() {
-            document.getElementById('mainLogo').src = logoSrc;
-            document.getElementById('footerLogo').src = logoSrc;
+            document.getElementById('mainLogo').src = siteImages.logo || logoSrc;
+            document.getElementById('footerLogo').src = siteImages.logo || logoSrc;
+            const serviceImgs = document.querySelectorAll('#services .grid > div img');
+            const imageTargets = {
+                about: document.querySelector('#about img'),
+                service1: serviceImgs[0], service2: serviceImgs[1],
+                service3: serviceImgs[2], service4: serviceImgs[3]
+            };
+            Object.entries(imageTargets).forEach(([key, img]) => {
+                if (img && siteImages[key]) img.src = siteImages[key];
+            });
+            if (siteImages.hero) {
+                document.querySelector('.hero-bg').style.backgroundImage =
+                    `linear-gradient(135deg, rgba(30,41,59,0.78) 0%, rgba(188,0,45,0.70) 100%), url("${siteImages.hero}")`;
+            }
+            renderAdminGallery();
         }
 
         function saveNewLogo() {
+            const target = document.getElementById('imageTargetSelect').value;
             const urlInput = document.getElementById('logoUrlInput').value.trim();
             const fileInput = document.getElementById('logoFileInput');
-
-            if (urlInput !== '') {
-                logoSrc = urlInput;
-                localStorage.setItem('sjlc_logo', logoSrc);
+            const applyImage = (src) => {
+                if (target === 'logo') {
+                    logoSrc = src;
+                    try { localStorage.setItem('sjlc_logo', src); }
+                    catch (err) { showToast('ছবি সংরক্ষণের জায়গা নেই। ছোট সাইজের ছবি ব্যবহার করুন।', true); return; }
+                } else if (target === 'newGallery') {
+                    siteImages.gallery = Array.isArray(siteImages.gallery) ? siteImages.gallery : [];
+                    siteImages.gallery.unshift({ id: Date.now().toString(), title: document.getElementById('galleryTitleInput').value.trim() || 'আমাদের ছবি', src: src });
+                    try { localStorage.setItem('sjlc_images', JSON.stringify(siteImages)); }
+                    catch (err) { siteImages.gallery.shift(); showToast('স্টোরেজ পূর্ণ। ছোট ছবি বা Image URL ব্যবহার করুন।', true); return; }
+                } else {
+                    siteImages[target] = src;
+                    try { localStorage.setItem('sjlc_images', JSON.stringify(siteImages)); }
+                    catch (err) { showToast('ছবি সংরক্ষণ করা যায়নি। ছোট সাইজের ছবি ব্যবহার করুন।', true); return; }
+                }
                 updateLogos();
+                document.getElementById('logoUrlInput').value = '';
+                fileInput.value = '';
                 closeLogoModal();
-                showToast(currentLang === 'bn' ? 'লোগো সফলভাবে আপডেট করা হয়েছে!' : 'Logo updated successfully!');
+                showToast(currentLang === 'bn' ? 'ছবি সফলভাবে আপডেট হয়েছে!' : 'Image updated successfully!');
+            };
+            if (urlInput) {
+                if (!/^https?:\/\//i.test(urlInput)) { showToast('সঠিক http/https ছবির URL দিন।', true); return; }
+                applyImage(urlInput);
             } else if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                if (!file.type.startsWith('image/')) { showToast('অনুগ্রহ করে ছবির ফাইল নির্বাচন করুন।', true); return; }
+                if (file.size > 1024 * 1024) { showToast('১ MB-এর কম সাইজের ছবি আপলোড করুন।', true); return; }
                 const reader = new FileReader();
-                reader.onload = function(e) {
-                    logoSrc = e.target.result;
-                    localStorage.setItem('sjlc_logo', logoSrc);
-                    updateLogos();
-                    closeLogoModal();
-                    showToast(currentLang === 'bn' ? 'লোগো সফলভাবে আপডেট করা হয়েছে!' : 'Logo updated successfully!');
-                };
-                reader.readAsDataURL(fileInput.files[0]);
+                reader.onload = (e) => applyImage(e.target.result);
+                reader.onerror = () => showToast('ছবি পড়া যায়নি, আবার চেষ্টা করুন।', true);
+                reader.readAsDataURL(file);
             } else {
-                showToast(currentLang === 'bn' ? 'অনুগ্রহ করে ছবি নির্বাচন বা URL টাইপ করুন' : 'Please provide a URL or select an image file', true);
+                showToast(currentLang === 'bn' ? 'ছবির URL দিন অথবা ফাইল নির্বাচন করুন' : 'Enter an image URL or choose a file', true);
             }
         }
 
